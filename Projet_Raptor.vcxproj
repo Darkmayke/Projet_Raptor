@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lebontest.c" />
-    <ClCompile Include="main.c" />
+    <ClCompile Include="Choix.c" />
+    <ClCompile Include="Couleurs.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -23,7 +23,8 @@ typedef struct {
 } Deplacement;
 
 typedef struct {
-    char color;
+    enum color couleur;
+	char nom[20];
     int num;
 } Joueur;
 
@@ -35,6 +36,8 @@ typedef struct {
 
 Cheval cheval[MAX_TAB], lion[MAX_TAB], singe[MAX_TAB];
 Cheval arrivee[MAX_TAB];
+
+enum color {BLEU, ROUGE, VERT, JAUNE};
 
 Plateau plateau[10][10];
 

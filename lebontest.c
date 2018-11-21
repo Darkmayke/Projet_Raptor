@@ -2,6 +2,6 @@
 
 int main(){
 
-printf("♞");
+printf("♞, On s'en branle");
 
 }

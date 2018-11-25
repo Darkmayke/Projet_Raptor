@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 #include "Couleurs.c"
 #include "mouvements.h"
+
 
 int main(void)
 {
@@ -45,6 +48,11 @@ int main(void)
 		} while ((verif[couleur_num - 1] != 0) && ((couleur_num < 0) || (couleur_num > 4)));
 		joueur[i].couleur = couleur_num - 1;
 		verif[couleur_num - 1] = 1;
+	}
+
+	int choix_depart(void)
+	{
+		aléa = rand() % (MAX - MIN + 1) + MIN
 	}
 
 	printf("Joueur 1: %s ID: %d\n %s\n", joueur[0].nom, joueur[0].num, coul_e[joueur[0].couleur]);

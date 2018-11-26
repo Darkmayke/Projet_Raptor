@@ -13,7 +13,7 @@ int coul(void) {
 		scanf("%d", &nb_joueur);
 	} while ((nb_joueur < 0) || (nb_joueur > 4));
 
-	/* S�l�ction des Joueurs*/
+	/* Seletion des Joueurs*/
 	Joueur joueur[4];
 	int couleur_num;
 	int verif[4] = { 0,0,0,0 };

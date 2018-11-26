@@ -41,16 +41,15 @@ typedef struct {
   int case2;
 }Plateau;
 
-Cheval cheval[MAX_TAB], lion[MAX_TAB], singe[MAX_TAB];
+Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
 
 Plateau plateau[10][10];
 
 int deplacement(Joueur joueur);
-int test_Cheval_select (char type,int num);
-int test_Cheval_mort (Cheval Cheval);
+int test_Cheval_select (char color,int num);
+int test_Cheval_renvoi (Cheval Cheval);
 int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int renvoie);
-int test_deplacement_select(int num_deplacement,int num_max);
 void deplace_Cheval(Deplacement deplacement,Cheval *Cheval);
 void vide_deplacements(Deplacement deplacement_possible[],int num_max);
 

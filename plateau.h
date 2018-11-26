@@ -1,5 +1,5 @@
-#ifndef GESTION_TABLEAU_H
-#define GESTION_TABLEAU_H
+#ifndef PLATEAU_H
+#define PLATEAU_H
 
 #define MAX_TAB 20
 

@@ -31,7 +31,7 @@ void retour_menu() {
          s=getchar();
     }while(s!='\n');
 
-    putchar(a);
+    putchar(a); //met fin au fichier
 }
 
 //Permet de vider le buffer

@@ -1,5 +1,5 @@
-#ifndef DEPLACEMENT_Cheval_H
-#define DEPLACEMENT_Cheval_H
+#ifndef DEPLACEMENT_CHEVAL_H
+#define DEPLACEMENT_CHEVAL_H
 
 #define MAX_TAB 20
 
@@ -35,13 +35,11 @@ typedef struct {
 
 Plateau plateau[10][10];
 
-Cheval cheval[MAX_TAB], lion[MAX_TAB], singe[MAX_TAB];
+Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
 
 Joueur joueur_jouant;
 
-int deplacement_singe(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
-int deplacement_lion(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 int deplacement_renvoie(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 

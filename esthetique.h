@@ -1,5 +1,5 @@
-#ifndef CADRES_H
-#define CADRES_H
+#ifndef ESTHETIQUE_H
+#define ESTHETIQUE_H
 
 void bandeau();
 void efface_ecran();

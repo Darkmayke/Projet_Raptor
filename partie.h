@@ -1,5 +1,5 @@
-#ifndef JOUER_H
-#define JOUER_H
+#ifndef PARTIE_H
+#define PARTIE_H
 
 #define MAX_TAB 20
 

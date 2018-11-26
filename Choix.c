@@ -5,30 +5,26 @@
 #include "mouvements.h"
 
 
-int main(void)
-{
+int coul(void) {
 	/* Nombre de Joueur*/
 	int nb_joueur;
-	do
-	{
+	do {
 		printf("Nombre de Joueur pour la Partie : ");
 		scanf("%d", &nb_joueur);
 	} while ((nb_joueur < 0) || (nb_joueur > 4));
 
-	/* Séléction des Joueurs*/
+	/* Sï¿½lï¿½ction des Joueurs*/
 	Joueur joueur[4];
 	int couleur_num;
 	int verif[4] = { 0,0,0,0 };
 	char coul_e[][10] = { "BLEU", "ROUGE", "VERT", "JAUNE" };
 
 
-	for (int i = 0; i < nb_joueur; i++)
-	{
+	for (int i = 0; i < nb_joueur; i++) {
 		printf("Nom du Joueur %d : \n", i + 1);
 		scanf("%s", joueur[i].nom);
 		joueur[i].num = i + 1;
-		do
-		{
+		do {
 			printf("Quelle Couleur voulez-vous :\n");
 			printf(COLOR_BLEU_EC);
 			printf("Bleu (1)\n");
@@ -40,8 +36,8 @@ int main(void)
 			printf("Jaune (4)\n");
 			printf(COLOR_BASE_EC);
 			scanf("%d", &couleur_num);
-			if (verif[couleur_num - 1] == 1)
-			{
+
+			if (verif[couleur_num - 1] == 1) {
 				printf("Couleur deja prise\n");
 			}
 
@@ -50,10 +46,9 @@ int main(void)
 		verif[couleur_num - 1] = 1;
 	}
 
-	int choix_depart(void)
-	{
-		aléa = rand() % (MAX - MIN + 1) + MIN
-	}
+	/*int choix_depart(void) {
+		alea = rand() % (MAX - MIN + 1) + MIN
+	} TA FONCTION EST ICI JE L'AI MISE EN COMMENTAIRE DE MANIERE A NE PAS AVOIR D'ERREUR Ã€ LA COMPLIATION*/
 
 	printf("Joueur 1: %s ID: %d\n %s\n", joueur[0].nom, joueur[0].num, coul_e[joueur[0].couleur]);
 

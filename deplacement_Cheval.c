@@ -14,7 +14,7 @@ int deplacement_singe(Joueur joueur,Deplacement deplacement_possible[],Cheval *C
         if (plateau[x+j][y+i].case1 == '0' && test_case(x+j,y+i) == 1){ //regarde si la case d'après est vide et dans le plateau
 
             creer_deplacement(deplacement_possible,x+j,y+i,num);
-            deplacement_possible[num].shing_shang = 1;           //créer le déplacement et le définit comme un deplacement incluant un shing shang
+            deplacement_possible[num].renvoie = 1;           //créer le déplacement et le définit comme un deplacement incluant un shing shang
             code_retour = 1;
         }
 
@@ -42,7 +42,7 @@ int deplacement_lion(Joueur joueur,Deplacement deplacement_possible[],Cheval *Ch
         if (plateau[x+j][y+i].case1 == '0' && test_case(x+j,y+i) == 1){
 
             creer_deplacement(deplacement_possible,x+j,y+i,num);
-            deplacement_possible[num].shing_shang = 1;
+            deplacement_possible[num].renvoie = 1;
 			code_retour = 1;
 		}
 
@@ -65,7 +65,7 @@ int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *
         if ( (plateau[x+j][y+i].case1 == '0' || (plateau[x+j][y+i].case1 == 'P' && plateau[x+j][y+i].color != joueur.color)) && test_case(x+j,y+i) == 1){
 
             creer_deplacement(deplacement_possible,x+j,y+i,num);
-            deplacement_possible[num].shing_shang = 1;
+            deplacement_possible[num].renvoie = 1;
 			code_retour = 1;
 		}
     }
@@ -73,7 +73,7 @@ int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *
 	return code_retour;
 }
 
-int deplacement_shing_shang(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num)
+int deplacement_renvoie(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num)
 {
     int code_retour = 0;
 
@@ -84,7 +84,7 @@ int deplacement_shing_shang(Joueur joueur,Deplacement deplacement_possible[],Che
              if(plateau[x+j][y+i].case1 == '0' && test_case(x+j,y+i) == 1){
 
                 creer_deplacement(deplacement_possible,x+j,y+i,num);
-                deplacement_possible[num].shing_shang = 1;
+                deplacement_possible[num].renvoie = 1;
 
                 if (plateau[x][y].color != joueur.color){
                     if (joueur.num == 1) deplacement_possible[num].retireCheval = &singe[(plateau[x][y].case2)]+6; //permet de sélectionner le Cheval qui mourrira lors du déplacement
@@ -99,7 +99,7 @@ int deplacement_shing_shang(Joueur joueur,Deplacement deplacement_possible[],Che
              if(plateau[x+j][y+i].case1 == '0' && test_case(x+j,y+i) == 1){
 
                 creer_deplacement(deplacement_possible,x+j,y+i,num);
-                deplacement_possible[num].shing_shang = 1;
+                deplacement_possible[num].renvoie = 1;
 
                 if (plateau[x][y].color != joueur.color){
                     if (plateau[x][y].case1 == 'S'){
@@ -119,7 +119,7 @@ int deplacement_shing_shang(Joueur joueur,Deplacement deplacement_possible[],Che
              if( (plateau[x+j][y+i].case1 == '0' || (plateau[x+j][y+i].case1 == 'P' && plateau[x+j][y+i].color != joueur.color) ) && test_case(x+j,y+i) == 1){
 
                 creer_deplacement(deplacement_possible,x+j,y+i,num);
-                deplacement_possible[num].shing_shang = 1;
+                deplacement_possible[num].renvoie = 1;
 
                 if (plateau[x][y].color != joueur.color){
                     if (plateau[x][y].case1 == 'S'){
@@ -155,6 +155,6 @@ void creer_deplacement(Deplacement deplacement_possible[],int x,int y,int num)
     deplacement_possible[num].position.x = x;
     deplacement_possible[num].position.y = y;
 
-    deplacement_possible[num].shing_shang = 0;
+    deplacement_possible[num].renvoie = 0;
     deplacement_possible[num].retireCheval = 0;
 }

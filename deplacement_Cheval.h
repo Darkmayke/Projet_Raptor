@@ -19,7 +19,7 @@ typedef struct {
 typedef struct {
     Position position;
     Cheval *retireCheval;
-    int shing_shang;
+    int renvoie;
 } Deplacement;
 
 typedef struct {
@@ -43,7 +43,7 @@ Joueur joueur_jouant;
 int deplacement_singe(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 int deplacement_lion(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
-int deplacement_shing_shang(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
+int deplacement_renvoie(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num);
 
 void creer_deplacement(Deplacement deplacement_possible[],int x, int y, int num);
 

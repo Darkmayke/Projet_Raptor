@@ -6,7 +6,7 @@
 int deplacement(Joueur joueur) {
     char select_type,select_num;
     Deplacement deplacement_possible[MAX_TAB];
-    int code_retour = 1, shing_shang = 0, num_deplacements_max = 0;
+    int code_retour = 1, renvoie = 0, num_deplacements_max = 0;
     Cheval *Cheval_selectionne;
     int erreur = 0;
 
@@ -44,7 +44,7 @@ int deplacement(Joueur joueur) {
 
     }while (test_Cheval_select(select_type,select_num) == 0 || test_Cheval_mort(*Cheval_selectionne) == 0); //test si le Cheval existe et est encore sorti
 
-    num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,shing_shang); //creer tout les deplacement possible à partir du Cheval selectionne
+    num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,renvoie); //creer tout les deplacement possible à partir du Cheval selectionne
 
     int deplacement_select = 0;
     erreur = 0;
@@ -68,9 +68,9 @@ int deplacement(Joueur joueur) {
         vide_deplacements(deplacement_possible,num_deplacements_max);
 
         //test si le Cheval n'est pas en shing shang
-        if (deplacement_possible[deplacement_select].shing_shang == 1){
-            shing_shang = 1;
-            num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,shing_shang);
+        if (deplacement_possible[deplacement_select].renvoie == 1){
+            renvoie = 1;
+            num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,renvoie);
             //test les différents déplacement possibles
 
             while(num_deplacements_max >= 1 && deplacement_select != 0){ //test si un ou des deplacements sont possibles, sinon sort de la boucle
@@ -94,7 +94,7 @@ int deplacement(Joueur joueur) {
 
                 if(deplacement_select > 0){
                     deplace_Cheval (deplacement_possible[deplacement_select],Cheval_selectionne);
-                    num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,shing_shang);
+                    num_deplacements_max = affiche_deplacements_possibles(joueur,Cheval_selectionne,deplacement_possible,renvoie);
                 }
             }
 
@@ -121,7 +121,7 @@ int test_Cheval_mort (Cheval Cheval) {
     return code_retour;
 }
 
-int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int shing_shang) {
+int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int renvoie) {
     int num = 1;
     for (int i = (-1); i <= 1;i++)
     {
@@ -129,13 +129,13 @@ int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplace
             if (test_case(Cheval->position.x+j,Cheval->position.y+i) == 1){ // regarde si la case n'est pas hors du plateau
                 if (i != 0 || j != 0 ){ //regarde si ce n'est pas la case du Cheval selectionné
                     if (Cheval->type == 'S'){
-                        if (shing_shang == 1) num += deplacement_shing_shang(joueur,deplacement_possible,Cheval,i,j,num);
+                        if (renvoie == 1) num += deplacement_renvoie(joueur,deplacement_possible,Cheval,i,j,num);
                         else num += deplacement_singe(joueur,deplacement_possible,Cheval,i,j,num);
                     }else if(Cheval->type == 'L'){
-                        if (shing_shang == 1) num += deplacement_shing_shang(joueur,deplacement_possible,Cheval,i,j,num);
+                        if (renvoie == 1) num += deplacement_renvoie(joueur,deplacement_possible,Cheval,i,j,num);
                         else num += deplacement_lion(joueur,deplacement_possible,Cheval,i,j,num);
                     }else if(Cheval->type == 'D'){
-                        if (shing_shang == 1) num += deplacement_shing_shang(joueur,deplacement_possible,Cheval,i,j,num);
+                        if (renvoie == 1) num += deplacement_renvoie(joueur,deplacement_possible,Cheval,i,j,num);
                         else num += deplacement_cheval(joueur,deplacement_possible,Cheval,i,j,num);
                     }
                 }

@@ -1,0 +1,679 @@
+loris@Liros:~$ mkdir
+mkdir: opérande manquant
+Saisissez « mkdir --help » pour plus d'informations.
+loris@Liros:~$ mkdir temp
+loris@Liros:~$ cd temp
+loris@Liros:~/temp$ git clone https://github.com/Darkmayke/Projet_Raptor.git
+Clonage dans 'Projet_Raptor'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 122 (delta 7), reused 7 (delta 3), pack-reused 103
+Réception d'objets: 100% (122/122), 45.51 KiB | 465.00 KiB/s, fait.
+Résolution des deltas: 100% (58/58), fait.
+loris@Liros:~/temp$ git log
+fatal: ni ceci ni aucun de ses répertoires parents n'est un dépôt git : .git
+loris@Liros:~/temp$ cd Projet_Raptor/
+loris@Liros:~/temp/Projet_Raptor$ git log
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+
+commit c8b7bc0eec01ba3a128cc9e763bdc9ede78e5db4
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+
+commit c8b7bc0eec01ba3a128cc9e763bdc9ede78e5db4
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+:...skipping...
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+
+commit c8b7bc0eec01ba3a128cc9e763bdc9ede78e5db4
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:07 2018 +0100
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit 31fbc4b2009bedccdf1108683ce047c2b3bc0347 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 0d47142 24d32a9
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Mon Nov 26 10:32:30 2018 +0100
+
+    Merge branch 'master' of https://github.com/Darkmayke/Projet_Raptor
+
+commit 0d4714224e63d99b857fc8a9cef3d2a1ec3bf2d2
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Sun Nov 25 22:57:55 2018 +0100
+
+    Ta mère
+
+commit 24d32a9c18d954d23abfcf1f3f7da1e3a93dd746
+Author: Loris <40333392+Cliros@users.noreply.github.com>
+Date:   Sun Nov 25 22:54:02 2018 +0100
+
+    Add files via upload
+
+commit 14f72959e54383433a5c51962d725a8a34ee19c7
+Author: Baptiste_Moreau <Baptiste_Moreau@LAPTOP-DBBRBAUD>
+Date:   Wed Nov 21 23:09:58 2018 +0100
+
+    WIP Choix
+
+commit eaa1af904987afcb5ff592b38a59dc0a7fa22ff0
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:31 2018 +0100
+
+    Delete plateau.h
+
+commit 4412924119403c95d4b540b1c4b64f8a8ce2bed2
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:24 2018 +0100
+
+    Delete plateau.c
+
+commit ebc315f2ff11fb101832e8fb1ab787ff1b16a637
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+Date:   Wed Nov 21 16:26:14 2018 +0100
+
+    Delete partie.h
+
+commit c8b7bc0eec01ba3a128cc9e763bdc9ede78e5db4
+Author: Darkmayke <45065524+Darkmayke@users.noreply.github.com>
+loris@Liros:~/temp/Projet_Raptor$ git status
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+
+rien à valider, la copie de travail est propre
+loris@Liros:~/temp/Projet_Raptor$ ls
+chevaux               generationEcurie.h  plateau.h
+Choix.c               main.c              Projet_Raptor-master
+Couleurs.c            main.h              Projet_Raptor.sln
+deplacement_Cheval.c  mouvements.c        Projet_Raptor.vcxproj
+deplacement_Cheval.h  mouvements.h        Projet_Raptor.vcxproj.filters
+esthetique.c          partie.c            README.md
+esthetique.h          partie.h
+generationEcurie.c    plateau.c
+loris@Liros:~/temp/Projet_Raptor$ git rm chevaux
+rm 'chevaux'
+loris@Liros:~/temp/Projet_Raptor$ cd Projet_Raptor-master/
+loris@Liros:~/temp/Projet_Raptor/Projet_Raptor-master$ ls
+chevaux               generationEcurie.c  partie.h
+Choix.c               generationEcurie.h  plateau.c
+Couleurs.c            main.c              plateau.h
+deplacement_Cheval.c  main.h              Projet_Raptor.sln
+deplacement_Cheval.h  mouvements.c        Projet_Raptor.vcxproj
+esthetique.c          mouvements.h        Projet_Raptor.vcxproj.filters
+esthetique.h          partie.c            README.md
+loris@Liros:~/temp/Projet_Raptor/Projet_Raptor-master$ cd
+loris@Liros:~$ cd temp/
+loris@Liros:~/temp$ cd Projet_Raptor/
+loris@Liros:~/temp/Projet_Raptor$ ls
+Choix.c               generationEcurie.h  plateau.c
+Couleurs.c            main.c              plateau.h
+deplacement_Cheval.c  main.h              Projet_Raptor-master
+deplacement_Cheval.h  mouvements.c        Projet_Raptor.sln
+esthetique.c          mouvements.h        Projet_Raptor.vcxproj
+esthetique.h          partie.c            Projet_Raptor.vcxproj.filters
+generationEcurie.c    partie.h            README.md
+loris@Liros:~/temp/Projet_Raptor$ git rm -m Projet_Raptor-master/
+error: unknown switch `m'
+usage : git rm [<options>] [--] <fichier>...
+
+    -n, --dry-run         simuler l'action
+    -q, --quiet           ne pas afficher les fichiers supprimés
+    --cached              supprimer seulement de l'index
+    -f, --force           outrepasser la vérification des fichiers à jour
+    -r                    autoriser la suppression récursive
+    --ignore-unmatch      sortir avec un état zéro même si rien ne correspondait
+
+loris@Liros:~/temp/Projet_Raptor$ git rm -r Projet_Raptor-master/
+rm 'Projet_Raptor-master/Choix.c'
+rm 'Projet_Raptor-master/Couleurs.c'
+rm 'Projet_Raptor-master/Projet_Raptor.sln'
+rm 'Projet_Raptor-master/Projet_Raptor.vcxproj'
+rm 'Projet_Raptor-master/Projet_Raptor.vcxproj.filters'
+rm 'Projet_Raptor-master/README.md'
+rm 'Projet_Raptor-master/chevaux'
+rm 'Projet_Raptor-master/deplacement_Cheval.c'
+rm 'Projet_Raptor-master/deplacement_Cheval.h'
+rm 'Projet_Raptor-master/esthetique.c'
+rm 'Projet_Raptor-master/esthetique.h'
+rm 'Projet_Raptor-master/generationEcurie.c'
+rm 'Projet_Raptor-master/generationEcurie.h'
+rm 'Projet_Raptor-master/main.c'
+rm 'Projet_Raptor-master/main.h'
+rm 'Projet_Raptor-master/mouvements.c'
+rm 'Projet_Raptor-master/mouvements.h'
+rm 'Projet_Raptor-master/partie.c'
+rm 'Projet_Raptor-master/partie.h'
+rm 'Projet_Raptor-master/plateau.c'
+rm 'Projet_Raptor-master/plateau.h'
+loris@Liros:~/temp/Projet_Raptor$ git status
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+
+Modifications qui seront validées :
+  (utilisez "git reset HEAD <fichier>..." pour désindexer)
+
+	supprimé :        Projet_Raptor-master/Choix.c
+	supprimé :        Projet_Raptor-master/Couleurs.c
+	supprimé :        Projet_Raptor-master/Projet_Raptor.sln
+	supprimé :        Projet_Raptor-master/Projet_Raptor.vcxproj
+	supprimé :        Projet_Raptor-master/Projet_Raptor.vcxproj.filters
+	supprimé :        Projet_Raptor-master/README.md
+	supprimé :        Projet_Raptor-master/chevaux
+	supprimé :        Projet_Raptor-master/deplacement_Cheval.c
+	supprimé :        Projet_Raptor-master/deplacement_Cheval.h
+	supprimé :        Projet_Raptor-master/esthetique.c
+	supprimé :        Projet_Raptor-master/esthetique.h
+	supprimé :        Projet_Raptor-master/generationEcurie.c
+	supprimé :        Projet_Raptor-master/generationEcurie.h
+	supprimé :        Projet_Raptor-master/main.c
+	supprimé :        Projet_Raptor-master/main.h
+	supprimé :        Projet_Raptor-master/mouvements.c
+	supprimé :        Projet_Raptor-master/mouvements.h
+	supprimé :        Projet_Raptor-master/partie.c
+	supprimé :        Projet_Raptor-master/partie.h
+	supprimé :        Projet_Raptor-master/plateau.c
+	supprimé :        Projet_Raptor-master/plateau.h
+	supprimé :        chevaux
+
+loris@Liros:~/temp/Projet_Raptor$ git commit -m "nettoyage"
+[master 35dede1] nettoyage
+ 22 files changed, 1311 deletions(-)
+ delete mode 100644 Projet_Raptor-master/Choix.c
+ delete mode 100644 Projet_Raptor-master/Couleurs.c
+ delete mode 100644 Projet_Raptor-master/Projet_Raptor.sln
+ delete mode 100644 Projet_Raptor-master/Projet_Raptor.vcxproj
+ delete mode 100644 Projet_Raptor-master/Projet_Raptor.vcxproj.filters
+ delete mode 100644 Projet_Raptor-master/README.md
+ delete mode 100644 Projet_Raptor-master/chevaux
+ delete mode 100644 Projet_Raptor-master/deplacement_Cheval.c
+ delete mode 100644 Projet_Raptor-master/deplacement_Cheval.h
+ delete mode 100644 Projet_Raptor-master/esthetique.c
+ delete mode 100644 Projet_Raptor-master/esthetique.h
+ delete mode 100644 Projet_Raptor-master/generationEcurie.c
+ delete mode 100644 Projet_Raptor-master/generationEcurie.h
+ delete mode 100644 Projet_Raptor-master/main.c
+ delete mode 100644 Projet_Raptor-master/main.h
+ delete mode 100644 Projet_Raptor-master/mouvements.c
+ delete mode 100644 Projet_Raptor-master/mouvements.h
+ delete mode 100644 Projet_Raptor-master/partie.c
+ delete mode 100644 Projet_Raptor-master/partie.h
+ delete mode 100644 Projet_Raptor-master/plateau.c
+ delete mode 100644 Projet_Raptor-master/plateau.h
+ delete mode 100644 chevaux
+loris@Liros:~/temp/Projet_Raptor$ git push
+Username for 'https://github.com': Cliros
+Password for 'https://Cliros@github.com':
+Énumération des objets: 3, fait.
+Décompte des objets: 100% (3/3), fait.
+Compression par delta en utilisant jusqu'à 4 fils d'exécution
+Compression des objets: 100% (2/2), fait.
+Écriture des objets: 100% (2/2), 229 bytes | 229.00 KiB/s, fait.
+Total 2 (delta 1), réutilisés 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Darkmayke/Projet_Raptor.git
+   31fbc4b..35dede1  master -> master
+loris@Liros:~/temp/Projet_Raptor$ git status
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
+
+	modifié :         main.c
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+loris@Liros:~/temp/Projet_Raptor$

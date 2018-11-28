@@ -3,20 +3,32 @@
 
 #define MAX_TAB 20
 
-typedef enum {
-  BLEU,
-  ROUGE,
-  VERT,
-  JAUNE
-}Color;
+typedef struct {
+  int x;
+  int y;
+} Position;
 
 typedef struct {
-  Position position;
-  Cheval cheval;
-}Case;
+    char color;
+    int num;
+} Joueur;
+
+typedef struct {
+    Position position;
+    char color;
+    int sorti;
+    int num;
+} Cheval;
+
+typedef struct {
+    char color;
+    char case1;
+    int case2;
+} Plateau;
 
 Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
+
 Plateau plateau[10][10];
 
 void nouvelle_partie();

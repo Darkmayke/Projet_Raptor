@@ -1,13 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "Couleurs.h"
-#include "deplacement_Cheval.h"
-#include "generationEcurie.h"
 #include "esthetique.h"
-#include "deplacement_Cheval.h"
-#include "partie.h"
-#include "plateau.h"
 
 void bandeau() {
     printf(" {==============================================}\n");

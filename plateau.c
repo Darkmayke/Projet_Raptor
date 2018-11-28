@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Couleurs.h"
-#include "generationEcurie.c"
-
-#include "deplacement_Cheval.h"
-#include "generationEcurie.h"
-#include "esthetique.h"
-#include "partie.h"
 #include "plateau.h"
 
 void actualise_plateau() {
@@ -16,12 +9,12 @@ void actualise_plateau() {
 
         for (int j = 0; j <= 9;j++){
 
-            if(plateau[j][i].couleur != 'V') reset_case(j,i);
+            if(plateau[j][i].color != 'V') reset_case(j,i);
         }
     }
 
     for (int i = 1; i <= 12;i++) {
-        if (plateau[arrivee[i].position.x][arrivee[i].position.y].couleur != 'V'){
+        if (plateau[arrivee[i].position.x][arrivee[i].position.y].color != 'V'){
         rentre_cheval(arrivee[i]);
         }
         rentre_cheval(cheval[i]);
@@ -31,7 +24,7 @@ void actualise_plateau() {
 void rentre_cheval(Cheval Cheval) {
     if (Cheval.sorti == 1){
         //affiche le Cheval sur le plateau
-        plateau[Cheval.position.x][Cheval.position.y].couleur = Cheval.couleur;
+        plateau[Cheval.position.x][Cheval.position.y].color = Cheval.color;
         plateau[Cheval.position.x][Cheval.position.y].case1 = Cheval.type;
         plateau[Cheval.position.x][Cheval.position.y].case2 = Cheval.num;
     }else{
@@ -42,7 +35,7 @@ void rentre_cheval(Cheval Cheval) {
 }
 
 void reset_case(int x,int y) {
-    plateau[x][y].couleur = '0';
+    plateau[x][y].color = '0';
     plateau[x][y].case1 = '0';
     plateau[x][y].case2 = 0;
 }

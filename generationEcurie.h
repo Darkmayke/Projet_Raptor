@@ -2,26 +2,24 @@
 #define GENERATION_H
 
 #define MAX_TAB 20
-#include "partie.h"
 
 typedef struct {
-  Color couleur;
-  char type;// À VIRER
-  int num;
-  Position position;
-  int sorti;
-}Cheval;
+  int x;
+  int y;
+
+} Position;
 
 typedef struct {
-  Color couleur;
-  char nom[20];
-  int num;
-}Joueur;
+    char color;
+    int num;
+    Position position;
+    int sorti;
+} Cheval;
 
 Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
 
-Joueur joueur_jouant;
-
+void generation_ecurie();
+void creer_cheval(Cheval *Cheval,char color, int num,int x,int y);
 
 #endif

@@ -40,12 +40,12 @@ typedef struct { // à enlever
   char case1;
   int case2;
 }Plateau;
-
+/*
 typedef struct {
   Position position;
   Cheval cheval;
 } case;
-
+*/
 
 
 Cheval cheval[MAX_TAB];

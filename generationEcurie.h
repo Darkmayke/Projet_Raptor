@@ -2,6 +2,7 @@
 #define GENERATION_H
 
 #define MAX_TAB 20
+#include "partie.h"
 
 typedef struct {
   Color couleur;

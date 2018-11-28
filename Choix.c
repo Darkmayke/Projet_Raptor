@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "Couleurs.c"
-#include "mouvements.h"
+#include "Couleurs.h"
+#include "deplacement_Cheval.h"
 
 int choix_depart(int MAX);
 int De(void);
@@ -18,7 +18,7 @@ int main(void)
 		scanf("%d", &nb_joueur);
 	} while ((nb_joueur < 0) || (nb_joueur > 4));
 
-	/* Séléction des Joueurs*/
+	/* Sï¿½lï¿½ction des Joueurs*/
 	Joueur joueur[4];
 	int couleur_num;
 	int verif[4] = { 0,0,0,0 };

@@ -40,11 +40,10 @@ typedef struct { // à enlever
   char case1;
   int case2;
 }Plateau;
-
-typedef struct {
+/*typedef struct {
   Position position;
   Cheval cheval;
-} case;
+} case;*/
 
 
 

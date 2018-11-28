@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "Couleurs.h"
 #include "deplacement_Cheval.h"
 
 int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *Cheval,int i,int j,int num) {

@@ -10,7 +10,6 @@ int main(void){
     char choix;
 
     do{
-      printf("hehe\n");
         do{
             bandeau();
             printf("\n   1.Jouer\n\n");

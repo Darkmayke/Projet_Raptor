@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "mouvements.h"
+#include "deplacement_Cheval.h"
 
 int deplacement(Joueur joueur) {
     char select_type,select_num;

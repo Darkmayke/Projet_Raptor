@@ -6,7 +6,6 @@
 typedef struct {
   int x;
   int y;
-
 } Position;
 
 typedef struct {

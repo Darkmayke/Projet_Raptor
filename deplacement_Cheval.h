@@ -3,40 +3,62 @@
 
 #define MAX_TAB 20
 
+typedef enum {
+  BLEU,
+  ROUGE,
+  VERT,
+  JAUNE
+}color;
+
 typedef struct {
   int x;
   int y;
-} Position;
+}Position;
 
 typedef struct {
-    char color;
-    char type;
-    int num;
-    Position position;
-    int sorti;
-} Cheval;
+  char color;
+  char type;
+  int num;
+  Position position;
+  int sorti;
+}Cheval;
 
 typedef struct {
-    Position position;
-    Cheval *retireCheval;
-    int renvoie;
-} Deplacement;
+  Position position;
+  Cheval *retireCheval;
+  int renvoie;
+}Deplacement;
 
 typedef struct {
-    char color;
-    char case1;
-    int case2;
-} Plateau;
+  color couleur;
+  char nom[20];
+  int num;
+}Joueur;
+
+typedef struct { // à enlever
+  char color;
+  char case1;
+  int case2;
+}Plateau;
 
 typedef struct {
-    char color;
-    int num;
-} Joueur;
+  Position position;
+  Cheval cheval;
+} case;
 
-Plateau plateau[10][10];
+
 
 Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
+
+Plateau plateau[10][10];
+//faire un pointeur de chaque case vers la case suivante (et le répéter tant que le numéro du dé n'a pas été atteint)
+int deplacement(Joueur joueur);
+int test_Cheval_select (char color,int num);
+int test_Cheval_renvoi (Cheval Cheval);
+int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int renvoie);
+void deplace_Cheval(Deplacement deplacement,Cheval *Cheval);
+void vide_deplacements(Deplacement deplacement_possible[],int num_max);
 
 Joueur joueur_jouant;
 

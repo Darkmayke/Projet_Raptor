@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "Couleurs.c"
-#include "mouvements.h"
+#include "deplacement_Cheval.h"
 
 
 int coul(void) {

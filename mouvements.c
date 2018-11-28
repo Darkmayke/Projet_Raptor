@@ -1,7 +1,23 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "Couleurs.h"
+#include "generationEcurie.c"
+
 #include "deplacement_Cheval.h"
+#include "generationEcurie.h"
+#include "esthetique.h"
+#include "partie.h"
+#include "plateau.h"
+
+int deplacement(Joueur joueur);
+int test_Cheval_select (Color couleur,int num);
+int test_Cheval_renvoi (Cheval Cheval);
+
+
+void deplace_Cheval(Deplacement deplacement,Cheval *Cheval);
+void vide_deplacements(Deplacement deplacement_possible[],int num_max);
+
 
 int deplacement(Joueur joueur) {
     char select_type,select_num;
@@ -31,7 +47,7 @@ int deplacement(Joueur joueur) {
           erreur = 1;
       }while (erreur == 0);
 }
-int test_Cheval_select (char color,int num) {
+int test_Cheval_select (Color couleur,int num) {
     int code_retour = 0;
 
   /*if (/*Le cheval sélectionner dans le cas présent peut effectuer le déplacement){ code_retour = 1;}*/
@@ -61,7 +77,7 @@ void vide_deplacements(Deplacement deplacement_possible[],int num_max) {
 
     for (int i = 0;i <= 9;i++){
         for (int j = 0;j <= 9;j++){
-            if (plateau[j][i].color == 'V'){reset_case(j,i);}
+            if (plateau[j][i].couleur == 'V'){reset_case(j,i);}
         }
     }
 }

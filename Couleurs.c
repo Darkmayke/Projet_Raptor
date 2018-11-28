@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /* Couleur Jaune*/
 #define COLOR_JAUNE_F "\033[33;43;7m%c\033[0m"
 #define COLOR_JAUNE_E "\033[33m%c\033[0m"

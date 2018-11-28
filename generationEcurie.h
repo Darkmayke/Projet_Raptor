@@ -4,22 +4,23 @@
 #define MAX_TAB 20
 
 typedef struct {
-  int x;
-  int y;
-
-} Position;
+  Color couleur;
+  char type;// À VIRER
+  int num;
+  Position position;
+  int sorti;
+}Cheval;
 
 typedef struct {
-    char color;
-    int num;
-    Position position;
-    int sorti;
-} Cheval;
+  Color couleur;
+  char nom[20];
+  int num;
+}Joueur;
 
 Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];
 
-void generation_ecurie();
-void creer_cheval(Cheval *Cheval,char color, int num,int x,int y);
+Joueur joueur_jouant;
+
 
 #endif

@@ -10,7 +10,7 @@ int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *
 
 	if (plateau[x][y].case1 == 'S'){
 
-        if ( (plateau[x+j][y+i].case1 == '0' || (plateau[x+j][y+i].case1 == 'P' && plateau[x+j][y+i].color != joueur.color)) && test_case(x+j,y+i) == 1){
+        if ( (plateau[x+j][y+i].case1 == '0') && (test_case(x+j,y+i) == 1)){
 
             creer_deplacement(deplacement_possible,x+j,y+i,num);
             deplacement_possible[num].renvoie = 1;

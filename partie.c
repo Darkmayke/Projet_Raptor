@@ -4,7 +4,7 @@
 #define Taille_Grille 50
 #define Taille_Grille_H 17
 
-#include "Couleurs.c"
+#include "Couleurs.h"
 #include "partie.h"
 
 void nouvelle_partie() {

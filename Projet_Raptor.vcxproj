@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Choix.h" />
+    <ClInclude Include="Couleurs.h" />
     <ClInclude Include="deplacement_Cheval.h" />
     <ClInclude Include="esthetique.h" />
     <ClInclude Include="generationEcurie.h" />
@@ -29,7 +31,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Choix.c" />
-    <ClCompile Include="Couleurs.c" />
+    <ClCompile Include="deplacement_Cheval.c" />
+    <ClCompile Include="esthetique.c" />
+    <ClCompile Include="generationEcurie.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="mouvements.c" />
+    <ClCompile Include="partie.c" />
+    <ClCompile Include="plateau.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

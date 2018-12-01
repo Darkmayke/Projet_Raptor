@@ -16,7 +16,7 @@ void Choix(void)
 		scanf("%d", &nb_joueur);
 	} while ((nb_joueur < 0) || (nb_joueur > 4));
 
-	/* Séléction des Joueurs*/
+	/* Sï¿½lï¿½ction des Joueurs*/
 	Joueur joueur[4];
 	int couleur_num;
 	int verif[4] = { 0,0,0,0 };
@@ -52,7 +52,7 @@ void Choix(void)
 
 			if (verif[couleur_num - 1] == 1)
 			{
-				printf("Couleur deja prise\n");
+				printf("Couleur dÃ©jÃ  prise\n");
 			}
 
 		} while ((verif[couleur_num - 1] != 0) || ((couleur_num < 0) || (couleur_num > 4)));
@@ -69,7 +69,7 @@ void Choix(void)
 
 	printf("Le Joueur %d commence !\n", depart);
 
-	printf("Le Joueur a lancer et a obtenu un %d !\n", lancer_D);
+	printf("Le Joueur a lancer et a obtenu un %d !\n", lancer_D);//ðŸŽ²
 }
 
 int choix_depart(MAX)

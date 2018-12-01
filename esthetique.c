@@ -6,9 +6,9 @@
 void bandeau() {
     printf(" {==============================================}\n");
     printf(" {==============================================}\n");
-    printf(" {                 LES PETITS CHEVAUXtamère           }\n");
+    printf(" {                 LES PETITS CHEVAUX           }\n");
     printf(" {==============================================}\n");
-    printf(" {======by CASSEGRAIN Loris & MOREAU Baptise ===}\n\n");
+    printf(" {====by CASSEGRAIN Loris & MOREAU Baptiste ©===}\n\n");
 }
 
 void efface_ecran() {

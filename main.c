@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "main.h"
-//©🎲
+
 int main(void){
     printf("\033[40;37m"); //initialise la couleur de base pour tout le programme
 
@@ -10,7 +10,6 @@ int main(void){
     char choix;
 
     do{
-      printf("hehe\n");
         do{
             bandeau();
             printf("\n   1.Jouer\n\n");

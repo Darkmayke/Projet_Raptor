@@ -31,6 +31,7 @@ int deplacement(Joueur joueur) {
           erreur = 1;
       }while (erreur == 0);
 }
+
 int test_Cheval_select (char color,int num) {
     int code_retour = 0;
 

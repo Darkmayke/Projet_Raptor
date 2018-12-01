@@ -6,15 +6,14 @@
 typedef struct {
   int x;
   int y;
-
-} Position;
+}Position;
 
 typedef struct {
-    char color;
-    int num;
-    Position position;
-    int sorti;
-} Cheval;
+  char color;
+  int num;
+  Position position;
+  int sorti;
+}Cheval;
 
 Cheval cheval[MAX_TAB];
 Cheval arrivee[MAX_TAB];

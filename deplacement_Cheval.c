@@ -14,9 +14,9 @@ int deplacement_cheval(Joueur joueur,Deplacement deplacement_possible[],Cheval *
 
             creer_deplacement(deplacement_possible,x+j,y+i,num);
             deplacement_possible[num].renvoie = 1;
-			code_retour = 1;
-		}
-    }
+			         code_retour = 1;
+		    }
+  }
 
 	return code_retour;
 }

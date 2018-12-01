@@ -8,7 +8,7 @@ typedef enum {
   ROUGE,
   VERT,
   JAUNE
-}color;
+}Color;
 
 typedef struct {
   int x;
@@ -16,7 +16,7 @@ typedef struct {
 }Position;
 
 typedef struct {
-  char color;
+  Color couleur;
   char type;
   int num;
   Position position;
@@ -30,13 +30,13 @@ typedef struct {
 }Deplacement;
 
 typedef struct {
-  color couleur;
+  Color couleur;
   char nom[20];
   int num;
 }Joueur;
 
 typedef struct { // à enlever
-  char color;
+  Color couleur;
   char case1;
   int case2;
 }Plateau;
@@ -54,7 +54,7 @@ Cheval arrivee[MAX_TAB];
 Plateau plateau[10][10];
 //faire un pointeur de chaque case vers la case suivante (et le répéter tant que le numéro du dé n'a pas été atteint)
 int deplacement(Joueur joueur);
-int test_Cheval_select (char color,int num);
+int test_Cheval_select (Color couleur,int num);
 int test_Cheval_renvoi (Cheval Cheval);
 int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int renvoie);
 void deplace_Cheval(Deplacement deplacement,Cheval *Cheval);

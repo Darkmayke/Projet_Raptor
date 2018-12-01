@@ -26,7 +26,7 @@ int deplacement_renvoie(Joueur joueur,Deplacement deplacement_possible[],Cheval 
 }
 
 void creer_deplacement(Deplacement deplacement_possible[],int x,int y,int num) {
-    plateau[x][y].color = 'V';
+    plateau[x][y].couleur = 'V';
     //permet de ne pas faire déborder le numéro du déplacement
     if(num >= 10){
         plateau[x][y].case1 = (num/10)+'0';

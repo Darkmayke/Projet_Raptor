@@ -29,8 +29,8 @@ void generation_ecurie() {
     creer_cheval(&arrivee[1],'J',0,24,10);
 }
 
-void creer_cheval(Cheval *Cheval,char color, int num,int x,int y) {
-    Cheval->color = color;
+void creer_cheval(Cheval *Cheval, Color couleur, int num, int x, int y) {
+    Cheval->couleur = couleur;
     Cheval->num = num;
     Cheval->position.x = x;
     Cheval->position.y = y;

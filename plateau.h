@@ -3,8 +3,15 @@
 
 #define MAX_TAB 20
 
+typedef enum {
+  BLEU,
+  ROUGE,
+  VERT,
+  JAUNE
+}Color;
+
 typedef struct {
-    char color;
+    Color couleur;
     char case1;
     int case2;
 } Plateau;
@@ -15,7 +22,7 @@ typedef struct {
 } Position;
 
 typedef struct {
-    char color;
+    Color couleur;
     char type;
     int num;
     Position position;

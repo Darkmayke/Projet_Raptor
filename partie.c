@@ -10,8 +10,8 @@
 void nouvelle_partie() {
 
     Joueur joueur1, joueur2, joueur_jouant;
-    joueur1.color = 'J', joueur1.num = 1;
-    joueur2.color = 'B', joueur2.num = 2;
+    joueur1.couleur = 'J', joueur1.num = 1;
+    joueur2.couleur = 'B', joueur2.num = 2;
     joueur_jouant = joueur2;
 
     int num_tour = 0;
@@ -192,9 +192,9 @@ void affiche_plateau() {
 
 
 void test_color(int x, int y) {
-        if (plateau[x][y].color == 'J') printf("\033[41;37m");
-        else if(plateau[x][y].color == 'B') printf("\033[47;30m");
-        else if(plateau[x][y].color == 'V') printf("\033[42;37m");
+        if (plateau[x][y].couleur == 'J') printf("\033[41;37m");
+        else if(plateau[x][y].couleur == 'B') printf("\033[47;30m");
+        else if(plateau[x][y].couleur == 'V') printf("\033[42;37m");
 }
 
 

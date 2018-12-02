@@ -56,9 +56,9 @@ Plateau plateau[10][10];
 int deplacement(Joueur joueur);
 int test_Cheval_select (Color couleur,int num);
 int test_Cheval_renvoi (Cheval Cheval);
-int affiche_deplacements_possibles(Joueur joueur,Cheval *Cheval,Position deplacement_possible[],int renvoie);
-void deplace_Cheval(Deplacement deplacement,Cheval *Cheval);
-void vide_deplacements(Deplacement deplacement_possible[],int num_max);
+int affiche_deplacements_possibles(Joueur joueur, Cheval *Cheval, Position deplacement_possible[], int renvoie);
+void deplace_Cheval(Deplacement deplacement, Cheval *Cheval);
+void vide_deplacements(Deplacement deplacement_possible[], int num_max);
 
 Joueur joueur_jouant;
 

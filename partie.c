@@ -110,13 +110,6 @@ void affiche_plateau() {
       {"[] [] [] [] [] [] [] [ [ ] ] [] [] [] [] [] [] []"}
     };
 
-    //for (i = 0; i < Taille_Grille_H; i++) {
-  	//	for (j = 0; j < Taille_Grille; j++) {
-  	//		printf("%c", Grille[i][j]);
-  	//	}
-  	//	printf("\n");
-  	//}
-
   	for (i = 0; i < Taille_Grille_H ; i++){
   		for (j = 0; j < Taille_Grille; j++){
   			/* Jaune */
@@ -241,7 +234,7 @@ int test_fin_partie() {
             if(cheval[i].sorti == 1) code_retour = 0;
         }
     }
-    //vérifie si l'un des joueurs n'a plus de chevals
+    //vérifie si l'un des joueurs n'a plus de chevaux
 
     if(code_retour == 0){
         for(int i = 1;i <= 2;i++){
@@ -254,7 +247,7 @@ int test_fin_partie() {
             if (cheval[i].position.x == arrivee[2].position.x && cheval[i].position.y == arrivee[2].position.y) code_retour = 2;
         }
     }
-    //vérifie si l'un des joueurs à un cheval sur le arrivee adverse
+    //vérifie si l'un des joueurs à un cheval sur le arrivée adverse
 
     return code_retour;
 }

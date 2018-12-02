@@ -190,9 +190,8 @@ void test_color(int x, int y) {
         else if(plateau[x][y].couleur == 'V') printf("\033[42;37m");
 }
 
-
 void affiche_case(int i,int j) {
-    if (test_case(j,i) == 1) {
+  /*  if (test_case(j,i) == 1) {
         if ((j == 1 && (i != 5 && i != 4)) || (j == 0 && (i == 4 || i == 5))) printf("|");
 
         test_color(j,i);
@@ -204,7 +203,7 @@ void affiche_case(int i,int j) {
     }else{
         printf("     ");
     }
-
+*/
 }
 
 int test_case(int x,int y) {

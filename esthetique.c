@@ -6,7 +6,7 @@
 void bandeau() {
     printf(" {==============================================}\n");
     printf(" {==============================================}\n");
-    printf(" {                 LES PETITS CHEVAUX           }\n");
+    printf(" {              LES PETITS CHEVAUX              }\n");
     printf(" {==============================================}\n");
     printf(" {====by CASSEGRAIN Loris & MOREAU Baptiste ©===}\n\n");
 }

@@ -24,6 +24,6 @@ typedef struct {
 typedef struct {
   Color couleur;
   int num;
-}Cheval
+}Cheval;
 
 #endif

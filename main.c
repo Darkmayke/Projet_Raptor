@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <unistd.h>
+#include "esthetique.h"
+#include "partie.h"
+
 int main(void){
     printf("\033[40;37m"); //initialise la couleur de base pour tout le programme
 
@@ -14,7 +18,7 @@ int main(void){
             printf("   2.Règles\n\n");
             printf("   3.Quitter\n\n");
             printf("   CHOIX : ");
-            scanf("%d",&choix);
+            scanf("%c",&choix);
             efface_ecran();
         }while(choix < 1 || choix > 3);
 

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-#include "main.h"
+#include "h.h"
 
 int main(void){
     printf("\033[40;37m"); //initialise la couleur de base pour tout le programme
@@ -41,14 +40,4 @@ int main(void){
     }while (fin != 1);
 
     return 0;
-}
-
-void regles() { //les regles du jeu
-    char touche;
-    efface_ecran();
-    bandeau();
-    printf("\n Voici les règles du jeu :");
-    printf("\n\n Appuyez sur entree pour revenir au menu ");
-    clean();
-    scanf("%c",touche);
 }

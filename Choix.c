@@ -4,6 +4,7 @@
 #include "Couleurs.h"
 #include "deplacement_Cheval.h"
 #include "Choix.h"
+#include "common_structures.h"
 
 void Choix(void)
 {

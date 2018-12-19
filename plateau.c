@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "plateau.h"
+#include "common_structures.h"
 
 void actualise_plateau() {
     //REMPLI LE RESTE DU TABLEAU DES CASES VIDES

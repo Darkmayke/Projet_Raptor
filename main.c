@@ -9,7 +9,7 @@ int main(void){
     printf("\033[40;37m"); //initialise la couleur de base pour tout le programme
 
     int fin = 0;
-    char choix;
+    int choix;
 
     do{
         do{
@@ -18,7 +18,7 @@ int main(void){
             printf("   2.Règles\n\n");
             printf("   3.Quitter\n\n");
             printf("   CHOIX : ");
-            scanf("%c",&choix);
+            scanf("%d",&choix);
             efface_ecran();
         }while(choix < 1 || choix > 3);
 

@@ -18,7 +18,7 @@ void bandeau() {
     printf(" {==============================================}\n");
     printf(" {              LES PETITS CHEVAUX              }\n");
     printf(" {==============================================}\n");
-    printf(" {====by CASSEGRAIN Loris & MOREAU Baptiste ©===}\n\n");
+    printf(" {====by CASSEGRAIN Loris & MOREAU Baptiste© ===}\n\n");
 }
 
 void efface_ecran() {

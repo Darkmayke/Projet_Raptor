@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "partie.h"
 
+#include "choix.h"
+#include "plateau.h"
+
 void nouvelle_partie() {
   int recupDe;
   int recupChoix;

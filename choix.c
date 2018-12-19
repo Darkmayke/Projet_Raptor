@@ -2,11 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "Couleurs.h"
-#include "Choix.h"
+#include "couleurs.h"
+#include "choix.h"
 #include "h.h"
 
-void choix(int *p_recupDe,int *p_recupChoix)
+void choix(int *p_recupDe, int *p_recupChoix)
 {
 	srand(time(NULL));
 	/* Nombre de Joueur*/
@@ -73,9 +73,9 @@ void choix(int *p_recupDe,int *p_recupChoix)
 	printf("Le Joueur a lancer et a obtenu un %d !\n", *p_recupDe);//🎲
 }
 
-int choix_depart(MAX)
+int choix_depart(int max)
 {
-	int choix_d = rand() % (MAX - 1 + 1) + 1;
+	int choix_d = rand() % (max - 1 + 1) + 1;
 	return choix_d;
 }
 

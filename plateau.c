@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "Couleurs.h"
+#include "couleurs.h"
 
 #define Taille_Grille 50
 #define Taille_Grille_H 17

@@ -4,7 +4,6 @@
 void regles();
 void bandeau();
 void efface_ecran();
-void informations_partie(num_tour,couleur_joueur);
 void retour_menu();
 void clean();
 

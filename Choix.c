@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 #include "Couleurs.h"
-#include "deplacement_Cheval.h"
 #include "Choix.h"
-#include "common_structures.h"
+
 
 void Choix(void)
 {

@@ -105,12 +105,16 @@ int affichePlateau()
 
 void chemin(int *p_recupDe){
 
-  int position = 0;
+  int position = 55;
   int tabCase[Taille_Chemin];
 
+	printf("\nCase: %d -->", position);
   for (int saut = 0; saut < *p_recupDe; saut++) {
-    printf("Case: %d", position);
     position++;
+		if(position>56){
+			position=0;
+		}
   }
+	printf(" %d\n", position);
 
 }

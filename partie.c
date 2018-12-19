@@ -10,6 +10,6 @@ void nouvelle_partie() {
 
   choix(&recupDe, &recupChoix);
   printf("recupDe = %d | recupChoix = %d\n\n",recupDe, recupChoix);
-  affichePlateau();
   chemin(&recupDe);
+  affichePlateau();
 }

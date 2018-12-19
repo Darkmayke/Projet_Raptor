@@ -3,6 +3,6 @@
 
 int choix_depart(int MAX);
 int De(void);
-void Choix(void);
+void choix(int *p_recupDe,int *p_recupChoix);
 
 #endif

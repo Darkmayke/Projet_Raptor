@@ -1,5 +1,5 @@
-#ifndef DEPLACEMENT_CHEVAL_H
-#define DEPLACEMENT_CHEVAL_H
+#ifndef H_H
+#define H_H
 
 #define MAX_TAB 20
 
@@ -20,5 +20,10 @@ typedef struct {
   char nom[20];
   int num;
 }Joueur;
+
+typedef struct {
+  Color couleur;
+  int num;
+}Cheval
 
 #endif

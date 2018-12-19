@@ -21,7 +21,7 @@ int main(void){
         clean();
 
         switch (choix) {
-            case 1 : nouvelle_partie();
+            case 1 : //nouvelle_partie();
                      break;
 
             case 2 : regles();

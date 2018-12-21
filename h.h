@@ -11,11 +11,6 @@ typedef enum {
 }Color;
 
 typedef struct {
-  int x;
-  int y;
-}Position;
-
-typedef struct {
   Color couleur;
   char nom[20];
   int num;

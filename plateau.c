@@ -116,5 +116,4 @@ void chemin(int *p_recupDe){
 		}
   }
 	printf(" %d\n", position);
-
 }

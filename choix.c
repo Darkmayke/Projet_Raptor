@@ -8,23 +8,21 @@
 
 //void choix(int *p_recupDe, int *p_recupChoix, Joueur *j);
 
-void choix(int *p_recupDe, int *p_recupChoix, Joueur player[])
+void choix(int *p_recupDe, int *p_recupChoix, Joueur player[], int *nb_joueur)
 {
 	srand(time(NULL));
-	/* Nombre de Joueur*/
-	int nb_joueur;
 	do
 	{
 		printf("Nombre de Joueur pour la Partie : ");
-		scanf("%d", &nb_joueur);
-	} while ((nb_joueur < 0) || (nb_joueur > 4));
+		scanf("%d", nb_joueur);
+	} while ((*nb_joueur < 0) || (*nb_joueur > 4));
 
 	/* S�l�ction des Joueurs*/
 	Joueur *g;
 	int verif[4] = { 0,0,0,0 };
 	int couleur_num;
 
-	for (int i = 0; i < nb_joueur; i++)
+	for (int i = 0; i < *nb_joueur; i++)
 	{
 		g = player + i;
 		printf("Nom du Joueur %d : \n", i + 1);
@@ -62,7 +60,7 @@ void choix(int *p_recupDe, int *p_recupChoix, Joueur player[])
 		g->couleur = couleur_num - 1;
 	}
 
-	*p_recupChoix = choix_depart(nb_joueur);
+	*p_recupChoix = choix_depart(*nb_joueur);
 	*p_recupDe = De();
 }
 

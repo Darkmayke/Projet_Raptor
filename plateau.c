@@ -105,7 +105,7 @@ int affichePlateau()
 
 void chemin(int *p_recupDe){
 
-  int position = 55;
+  int position = 0; // Mettre à 55 pour aller plus vite lors de la vérification du passage de tour.
   int tabCase[Taille_Chemin];
 
 	printf("\nCase: %d -->", position);

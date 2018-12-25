@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "partie.h"
 
+#include "esthetique.h"
+#include "partie.h"
 #include "choix.h"
 #include "plateau.h"
 #include "h.h"
@@ -15,6 +16,7 @@ void nouvelle_partie() {
   Cheval ecurie[16];
 
   choix(&recupDe, &recupChoix, player, &nb_joueur);
+  efface_ecran();
   printf("recupDe = %d | recupChoix = %d\n\n",recupDe, recupChoix);
 
   printf("Joueur 1: %s ID: %d\n %s\n", player[0].nom, player[0].num, coul_e[player[0].couleur]);
@@ -27,7 +29,7 @@ void nouvelle_partie() {
   creer_cheval(ecurie, player, &nb_joueur);
 
   for (int j4 = 0; j4 < nb_joueur*4; j4++) {
-    printf("Cheval 1: num cheval : %d \n sa couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
+    printf("Num cheval : %d \n sa couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
   }// A convertir en fonction à part ou à enlever
 
   affichePlateau();

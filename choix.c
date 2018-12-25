@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
+#include "esthetique.h"
 #include "couleurs.h"
 #include "choix.h"
 #include "h.h"
@@ -16,8 +17,8 @@ void choix(int *p_recupDe, int *p_recupChoix, Joueur player[], int *nb_joueur)
 		printf("Nombre de Joueur pour la Partie : ");
 		scanf("%d", nb_joueur);
 	} while ((*nb_joueur < 0) || (*nb_joueur > 4));
-
-	/* S�l�ction des Joueurs*/
+	clean();
+	/* Sélection des Joueurs*/
 	Joueur *g;
 	int verif[4] = { 0,0,0,0 };
 	int couleur_num;
@@ -25,6 +26,7 @@ void choix(int *p_recupDe, int *p_recupChoix, Joueur player[], int *nb_joueur)
 	for (int i = 0; i < *nb_joueur; i++)
 	{
 		g = player + i;
+    efface_ecran();
 		printf("Nom du Joueur %d : \n", i + 1);
 		scanf("%s", g->nom);
 		g->num = i + 1;

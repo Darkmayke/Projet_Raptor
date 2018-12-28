@@ -1,10 +1,10 @@
 #include <stdio.h>
 
+#include "h.h"
 #include "couleurs.h"
 
 #define Taille_Grille 50
 #define Taille_Grille_H 17
-#define Taille_Chemin 56
 
 int affichePlateau()
 {
@@ -103,17 +103,35 @@ int affichePlateau()
   return 0;
 }
 
-void chemin(int *p_recupDe){
+void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixheval){
 
-  int position = 0; // Mettre à 55 pour aller plus vite lors de la vérification du passage de tour.
-  int tabCase[Taille_Chemin];
-
-	printf("\nCase: %d -->", position);
+  Case *c;
+  *p_position = 55; // Mettre à 55 pour aller plus vite lors de la vérification du passage de tour.
+	printf("\nCase: %d -->", *p_position);
   for (int saut = 0; saut < *p_recupDe; saut++) {
-    position++;
-		if(position>56){
-			position=0;
+    (*p_position)++;
+	c = cases + *p_position;
+		if(*p_position>56){
+			*p_position=0;
+		}
+		// Faire un switch case ici mais je sais pas faire
+		if (*recupchoixheval == 1) {
+			c->IDcheval1 = *IDcheval;
+		}
+		if (*recupchoixheval == 2) {
+			c->IDcheval2 = *IDcheval;
+		}
+		if (*recupchoixheval == 3) {
+			c->IDcheval3 = *IDcheval;
+		}
+		if (*recupchoixheval == 4) {
+			c->IDcheval4 = *IDcheval;
 		}
   }
-	printf(" %d\n", position);
+  printf(" %d\n", *p_position);
+  printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
+  printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
+  printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
+  printf("Case Cheval4 : %d\n", cases[*p_position].IDcheval4);
+	
 }

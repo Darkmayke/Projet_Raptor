@@ -26,7 +26,7 @@ void choix(int *p_recupDe, int *p_recupChoix, Joueur player[], int *nb_joueur)
 	for (int i = 0; i < *nb_joueur; i++)
 	{
 		g = player + i;
-    efface_ecran();
+        efface_ecran();
 		printf("Nom du Joueur %d : \n", i + 1);
 		scanf("%s", g->nom);
 		g->num = i + 1;

@@ -14,7 +14,12 @@ void nouvelle_partie();
   *\fn creer_cheval est la fonction permettant de créer les 16 chevaux
           en fonction du nombre de joueurs.
 */
-void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur); //ajouter un ID général
+void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval);
 ////////////////////////////////////////////////////////////////////////////////
+/**
+  *\fn selection_cheval est la fonction permettant au Joueur de séléctionner le
+       le cheval qui dot avancer sur le plateau.
+*/
+void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval);
 
 #endif

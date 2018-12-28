@@ -9,11 +9,16 @@
 void nouvelle_partie() {
   int recupDe;
   int recupChoix;
+  int recupchoixcheval;
   int nb_joueur;
+  int position;
+  int IDcheval;
+
 
   char coul_e[][10] = { "BLEU", "ROUGE", "VERT", "JAUNE" };
   Joueur player[4];
   Cheval ecurie[16];
+  Case cases[56];
 
   choix(&recupDe, &recupChoix, player, &nb_joueur);
   efface_ecran();
@@ -24,9 +29,11 @@ void nouvelle_partie() {
   printf("Le Joueur %d commence !\n", recupChoix);
   printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
 
-  chemin(&recupDe);
+  creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
 
-  creer_cheval(ecurie, player, &nb_joueur);
+  selection_cheval(&recupChoix, &recupchoixcheval, &IDcheval);
+
+  chemin(&recupDe, cases, &position, &IDcheval, &recupchoixcheval);
 
   for (int j4 = 0; j4 < nb_joueur*4; j4++) {
     printf("Num cheval : %d \n sa couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
@@ -35,13 +42,21 @@ void nouvelle_partie() {
   affichePlateau();
 }
 
-void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur) {
- int k=0; // ID des chevaux  (cheval n°12)
+void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval) {
+  *IDcheval = 0; // ID des chevaux  (cheval n°12)
   for (int i = 0; i < *nb_joueur; i++) {
     for (int j = 0; j < 4; j++) {
-      ecurie[k].couleur = player[i].couleur;
-      ecurie[k].num = j+1;
-      k++;
+      ecurie[*IDcheval].couleur = player[i].couleur;
+      ecurie[*IDcheval].num = j+1;
+      (*IDcheval)++;
     }
   }
+}
+
+void selection_cheval(int *recupchoix, int *recupchoixheval, int *IDcheval) {
+	*recupchoixheval = 0;
+	printf("Quel cheval voulez-vous faire avancez ? (Son Numéro): ");
+	scanf("%d", recupchoixheval);
+	
+	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixheval)-1;
 }

@@ -42,9 +42,10 @@ void nouvelle_partie() {
   chemin(&recupDe, cases, &position, &IDcheval, &recupchoixcheval);
 
   for (int j4 = 0; j4 < nb_joueur*4; j4++) {
-    printf("Num cheval : %d \n sa couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
+    printf("Cheval n°: %d | de couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
   }// A convertir en fonction à part ou à enlever
 
+  printf("\n");
   affichePlateau();
 }
 

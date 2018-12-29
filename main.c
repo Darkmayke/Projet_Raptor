@@ -11,6 +11,7 @@ int main(void){
     int fin = 0;
     int choix;
 
+    efface_ecran();
     do{
         do{
             bandeau();

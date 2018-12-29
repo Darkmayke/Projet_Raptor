@@ -18,8 +18,11 @@ void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheva
 ////////////////////////////////////////////////////////////////////////////////
 /**
   *\fn selection_cheval est la fonction permettant au Joueur de séléctionner le
-       le cheval qui veut déplacer sur le plateau.
+       le cheval qu'il veut déplacer sur le plateau.
 */
 void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval);
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
 
 #endif

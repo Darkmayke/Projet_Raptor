@@ -7,8 +7,6 @@
 #include "choix.h"
 #include "h.h"
 
-//void choix(int *p_recupDe, int *p_recupChoix, Joueur *j);
-
 void choix(int *p_recupDe, int *p_recupChoix, Joueur player[], int *nb_joueur)
 {
 	srand(time(NULL));

@@ -22,12 +22,18 @@ void nouvelle_partie() {
 
   choix(&recupDe, &recupChoix, player, &nb_joueur);
   efface_ecran();
-  printf("recupDe = %d | recupChoix = %d\n\n",recupDe, recupChoix);
+  printf("recupDe = %d | recupChoix = %d\n\n",recupDe, recupChoix); //utilité à la vérification ne pas oublier de l'enlever.
 
-  printf("Joueur 1: %s ID: %d\n %s\n", player[0].nom, player[0].num, coul_e[player[0].couleur]);
-  printf("Joueur 2: %s ID: %d\n %s\n", player[6].nom, player[6].num, coul_e[player[6].couleur]);
+//faire un for avec comme compteur le nombre de joueur jouant.
+  for (int i = 1; i <= nb_joueur; i++) {
+    printf("Joueur %d: %s ID: %d\n %s\n\n", i, player[0].nom, player[0].num, coul_e[player[0].couleur]);
+  }
+  //printf("Joueur 2: %s ID: %d\n %s\n\n", player[6].nom, player[6].num, coul_e[player[6].couleur]);
+
   printf("Le Joueur %d commence !\n", recupChoix);
   printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
+
+  efface_ecran();
 
   creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
 
@@ -53,10 +59,10 @@ void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheva
   }
 }
 
-void selection_cheval(int *recupchoix, int *recupchoixheval, int *IDcheval) {
-	*recupchoixheval = 0;
+void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval) {
+	*recupchoixcheval = 0;
 	printf("Quel cheval voulez-vous faire avancez ? (Son Numéro): ");
-	scanf("%d", recupchoixheval);
-	
-	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixheval)-1;
+	scanf("%d", recupchoixcheval);
+
+	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixcheval)-1;
 }

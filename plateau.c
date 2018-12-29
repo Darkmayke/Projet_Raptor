@@ -103,28 +103,28 @@ int affichePlateau()
   return 0;
 }
 
-void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixheval){
+void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixcheval){
 
   Case *c;
   *p_position = 55; // Mettre à 55 pour aller plus vite lors de la vérification du passage de tour.
-	printf("\nCase: %d -->", *p_position);
-  for (int saut = 0; saut < *p_recupDe; saut++) {
+
+	printf("\nCase : %d -->", *p_position);
+
+	for (int saut = 0; saut < *p_recupDe; saut++) {
     (*p_position)++;
-	c = cases + *p_position;
+		c = cases + *p_position;
+
 		if(*p_position>56){
 			*p_position=0;
 		}
-		// Faire un switch case ici mais je sais pas faire
-		if (*recupchoixheval == 1) {
+		// Faire un switch case ici mais je sais pas faire R--> pas trop chaud pour le case à cause des breaks et tout, c'est bien comme ça nan ?!
+		if (*recupchoixcheval == 1) {
 			c->IDcheval1 = *IDcheval;
-		}
-		if (*recupchoixheval == 2) {
+		}else if (*recupchoixcheval == 2) {
 			c->IDcheval2 = *IDcheval;
-		}
-		if (*recupchoixheval == 3) {
+		}else if (*recupchoixcheval == 3) {
 			c->IDcheval3 = *IDcheval;
-		}
-		if (*recupchoixheval == 4) {
+		}else if (*recupchoixcheval == 4) {
 			c->IDcheval4 = *IDcheval;
 		}
   }
@@ -132,6 +132,6 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
   printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
   printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
   printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
-  printf("Case Cheval4 : %d\n", cases[*p_position].IDcheval4);
-	
+  printf("Case Cheval4 : %d\n\n\n", cases[*p_position].IDcheval4);
+
 }

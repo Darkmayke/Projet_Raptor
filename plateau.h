@@ -10,6 +10,7 @@ int affichePlateau();
 /**
   *\fn chemin permet de retourner au début du chemin respectif à chaque cheval.
 */
-void chemin(int *p_recupDe, Case *p_c, int *p_position, int *IDcheval, int *recupchoixheval);
+void chemin(int *p_recupDe, Case *p_c, int *p_position, int *IDcheval, int *recupchoixcheval);
 ////////////////////////////////////////////////////////////////////////////////
+void deplacement(int *p_recupDe, Case *p_c, int *p_position, int *IDcheval, int *recupchoixcheval);
 #endif

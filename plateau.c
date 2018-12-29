@@ -106,7 +106,7 @@ int affichePlateau()
 void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixcheval){
 
   Case *c;
-  *p_position = 55; // Mettre à 55 pour aller plus vite lors de la vérification du passage de tour.
+  *p_position = 0; // Mettre à 55 pour la vérification du passage de tour.
 
 	printf("\nCase : %d -->", *p_position);
 
@@ -117,7 +117,7 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 		if(*p_position>56){
 			*p_position=0;
 		}
-		// Faire un switch case ici mais je sais pas faire R--> pas trop chaud pour le case à cause des breaks et tout, c'est bien comme ça nan ?!
+
 		if (*recupchoixcheval == 1) {
 			c->IDcheval1 = *IDcheval;
 		}else if (*recupchoixcheval == 2) {

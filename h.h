@@ -41,10 +41,11 @@ typedef struct {
 ////////////////////////////////////////////////////////////////////////////////
 /**
   * \struct case plateau.h "Plateau"
-  * \brief Structure de case qui prends chaque écurie dans chaque case et qui affiche le nombre de chevaux présents dans cette dernière.
+  * \brief Structure de case qui prends chaque écurie dans chaque case et qui
+      affiche le nombre de chevaux présents dans cette dernière.
   * \ Elle a 2 états, vide et non vide
   * \ Si non vide alors elle prend en mémoire l'/les identifiant/s du/des cheval/aux qui est/sont sur cette case
-  * \ Ne peut contenir que des chevaux de même couleur et que 4 chevaux au maximum.
+  * \ Ne peut contenir que 4 des chevaux d'une même couleur.
  */
  typedef struct{
 	 Color couleur;
@@ -52,7 +53,7 @@ typedef struct {
 	 int IDcheval2;
 	 int IDcheval3;
 	 int IDcheval4;
- }Case; //voir pour faire un enum selon les critères de notation.
+ }Case;
 
 
 #endif

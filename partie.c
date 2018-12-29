@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <unistd.h>
 #include "esthetique.h"
 #include "partie.h"
 #include "choix.h"
@@ -31,9 +31,10 @@ void nouvelle_partie() {
   //printf("Joueur 2: %s ID: %d\n %s\n\n", player[6].nom, player[6].num, coul_e[player[6].couleur]);
 
   printf("Le Joueur %d commence !\n", recupChoix);
+  sleep(1.5);
+  efface_ecran();
   printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
 
-  efface_ecran();
 
   creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
 

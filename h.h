@@ -9,10 +9,11 @@
   * \brief Représente les couleurs des 4 écuries.
 */
 typedef enum {
+  VERT,
+  JAUNE,
   BLEU,
   ROUGE,
-  VERT,
-  JAUNE
+  BLANC
 }Color;
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -26,6 +27,7 @@ typedef struct {
   Color couleur;
   char nom[20];
   int num;
+  char cheval_e;
 }Joueur;
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -37,6 +39,7 @@ typedef struct {
 typedef struct {
   Color couleur;
   int num;
+  int position_c;
 }Cheval;
 ////////////////////////////////////////////////////////////////////////////////
 /**

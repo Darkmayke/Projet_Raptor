@@ -104,33 +104,43 @@ int affichePlateau()
   return 0;
 }
 
-void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixcheval){
-
+void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixcheval, Cheval ecurie[]){
+  char coul_e[][10] = { "VERT", "JAUNE", "BLEU", "ROUGE", "BLANC" };
   Case *c;
-  *p_position = 0; // Mettre à 55 pour la vérification du passage de tour.
+  c = cases + *p_position;
+  // Mettre à 55 pour la vérification du passage de tour.
 
 	printf("\nCase : %d -->", *p_position);
 
 	for (int saut = 0; saut < *p_recupDe; saut++) {
-    (*p_position)++;
-		c = cases + *p_position;
+		(*p_position)++;
 
-		if(*p_position>56){
-			*p_position=0;
+		if (*p_position > 56) {
+			*p_position = 0;
 		}
 
-		if (*recupchoixcheval == 1) {
-			c->IDcheval1 = *IDcheval;
-		}else if (*recupchoixcheval == 2) {
-			c->IDcheval2 = *IDcheval;
-		}else if (*recupchoixcheval == 3) {
-			c->IDcheval3 = *IDcheval;
-		}else if (*recupchoixcheval == 4) {
-			c->IDcheval4 = *IDcheval;
-		}
-  }
+    }
+	printf(" %d\n", *p_position);
 
-  printf(" %d\n", *p_position);
+	if (*recupchoixcheval == 1) {
+		c->couleur = ecurie[*IDcheval].couleur;
+		c->IDcheval1 = *IDcheval;
+	}
+	else if (*recupchoixcheval == 2) {
+		c->couleur = ecurie[*IDcheval].couleur;
+		c->IDcheval2 = *IDcheval;
+	}
+	else if (*recupchoixcheval == 3) {
+		c->couleur = ecurie[*IDcheval].couleur;
+		c->IDcheval3 = *IDcheval;
+	}
+	else if (*recupchoixcheval == 4) {
+		c->couleur = ecurie[*IDcheval].couleur;
+		c->IDcheval4 = *IDcheval;
+	}
+
+  
+  printf("Case Couleur : %s\n", coul_e[cases[*p_position].couleur]);
   printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
   printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
   printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);

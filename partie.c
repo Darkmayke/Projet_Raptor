@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 #include "esthetique.h"
 #include "partie.h"
 #include "choix.h"
@@ -11,40 +10,50 @@ void nouvelle_partie() {
   int recupChoix;
   int recupchoixcheval;
   int nb_joueur;
-  int position;
+  int position = 0;
   int IDcheval;
 
 
-  char coul_e[][10] = { "BLEU", "ROUGE", "VERT", "JAUNE" };
+  char coul_e[][10] = { "VERT", "JAUNE", "BLEU", "ROUGE", "BLANC" };
   Joueur player[4];
-  Cheval ecurie[16];
+  Cheval ecurie[17];
   Case cases[56];
 
-  choix(&recupDe, &recupChoix, player, &nb_joueur);
-  efface_ecran();
-  printf("recupDe = %d | recupChoix = %d\n\n",recupDe, recupChoix); //utilité à la vérification ne pas oublier de l'enlever.
+  // Initialisation du Jeu
 
-//faire un for avec comme compteur le nombre de joueur jouant.
-  for (int i = 1; i <= nb_joueur; i++) {
-    printf("Joueur %d: %s ID: %d\n %s\n\n", i, player[0].nom, player[0].num, coul_e[player[0].couleur]);
+  for (int i = 0; i < 56; i++) {
+	  cases[i].couleur = 4;
+	  cases[i].IDcheval1 = 17;
+	  cases[i].IDcheval2 = 17;
+	  cases[i].IDcheval3 = 17;
+	  cases[i].IDcheval4 = 17;
   }
-  //printf("Joueur 2: %s ID: %d\n %s\n\n", player[6].nom, player[6].num, coul_e[player[6].couleur]);
 
-  printf("Le Joueur %d commence !\n", recupChoix);
-  sleep(5);
-  efface_ecran();
-  printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
+  for (int i = 0; i < 17; i++) {
+	  ecurie[i].position_c = 56;
+  }
 
+  choix(player, &nb_joueur);
 
   creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
 
-  selection_cheval(&recupChoix, &recupchoixcheval, &IDcheval);
+  recupChoix = choix_depart(&nb_joueur);
+  printf("Le Joueur %d commence !\n", recupChoix);
 
-  chemin(&recupDe, cases, &position, &IDcheval, &recupchoixcheval);
+  recupDe = De(player, ecurie, &recupChoix, cases, &position, &recupchoixcheval, &IDcheval);
+  printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
 
-  for (int j4 = 0; j4 < nb_joueur*4; j4++) {
-    printf("Cheval n°: %d | de couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
-  }// A convertir en fonction à part ou à enlever
+  for (int i = 0; i <= nb_joueur - 1; i++) {
+	  printf("Joueur %d: %s ID: %d\n %s\n Ecurie: %d\n\n", i + 1, player[i].nom, player[i].num, coul_e[player[i].couleur], player[i].cheval_e);
+  }
+
+  for (int j4 = 0; j4 < nb_joueur * 4; j4++) {
+	  printf("Cheval n°: %d | de couleur : %s | en position : %d\n", ecurie[j4].num, coul_e[ecurie[j4].couleur], ecurie[j4].position_c);
+  }
+
+  // selection_cheval(&recupChoix, &recupchoixcheval, &IDcheval);
+
+  //chemin(&recupDe, cases, &position, &IDcheval, &recupchoixcheval, ecurie);
 
   printf("\n");
   printf("\n");

@@ -13,4 +13,5 @@ int affichePlateau();
 void chemin(int *p_recupDe, Case *p_c, int *p_position, int *IDcheval, int *recupchoixcheval);
 ////////////////////////////////////////////////////////////////////////////////
 void deplacement(int *p_recupDe, Case *p_c, int *p_position, int *IDcheval, int *recupchoixcheval);
+////////////////////////////////////////////////////////////////////////////////
 #endif

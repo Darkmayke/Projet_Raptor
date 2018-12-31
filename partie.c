@@ -31,7 +31,7 @@ void nouvelle_partie() {
   //printf("Joueur 2: %s ID: %d\n %s\n\n", player[6].nom, player[6].num, coul_e[player[6].couleur]);
 
   printf("Le Joueur %d commence !\n", recupChoix);
-  sleep(1.5);
+  sleep(5);
   efface_ecran();
   printf("Le Joueur a lancer et a obtenu un %d !\n", recupDe);
 
@@ -46,6 +46,8 @@ void nouvelle_partie() {
     printf("Cheval n°: %d | de couleur : %s\n", ecurie[j4].num, coul_e[ecurie[j4].couleur]);
   }// A convertir en fonction à part ou à enlever
 
+  printf("\n");
+  printf("\n");
   printf("\n");
   affichePlateau();
 }

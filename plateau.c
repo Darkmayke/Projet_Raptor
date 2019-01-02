@@ -2,6 +2,7 @@
 
 #include "h.h"
 #include "couleurs.h"
+#include "plateau.h"
 
 #define Taille_Grille 50
 #define Taille_Grille_H 17
@@ -106,12 +107,18 @@ int affichePlateau()
 
 void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *recupchoixcheval, Cheval ecurie[]){
   char coul_e[][10] = { "VERT", "JAUNE", "BLEU", "ROUGE", "BLANC" };
-  Case *c;
-  c = cases + *p_position;
   // Mettre à 55 pour la vérification du passage de tour.
+	
+  int r_ID = 16; // Permet de remettre a la valeur initiale l'ID d'un cheval dans la structure case
+	deplacement(p_position, cases, ecurie, &r_ID, recupchoixcheval);
+	printf("Case Numero : %d\n", *p_position);
+	printf("Case Couleur : %s\n", coul_e[cases[*p_position].couleur]);
+	printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
+	printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
+	printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
+	printf("Case Cheval4 : %d\n\n\n", cases[*p_position].IDcheval4);
 
 	printf("\nCase : %d -->", *p_position);
-
 	for (int saut = 0; saut < *p_recupDe; saut++) {
 		(*p_position)++;
 
@@ -121,7 +128,21 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 
     }
 	printf(" %d\n", *p_position);
+	ecurie[*IDcheval].position_c = *p_position;
+	deplacement(p_position, cases, ecurie, IDcheval, recupchoixcheval);
 
+  printf("Case Numero : %d\n", *p_position);
+  printf("Case Couleur : %s\n", coul_e[cases[*p_position].couleur]);
+  printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
+  printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
+  printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
+  printf("Case Cheval4 : %d\n\n\n", cases[*p_position].IDcheval4);
+
+}
+
+void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, int *recupchoixcheval) {
+	Case *c;
+	c = cases + *position;
 	if (*recupchoixcheval == 1) {
 		c->couleur = ecurie[*IDcheval].couleur;
 		c->IDcheval1 = *IDcheval;
@@ -138,12 +159,4 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 		c->couleur = ecurie[*IDcheval].couleur;
 		c->IDcheval4 = *IDcheval;
 	}
-
-  
-  printf("Case Couleur : %s\n", coul_e[cases[*p_position].couleur]);
-  printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
-  printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
-  printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
-  printf("Case Cheval4 : %d\n\n\n", cases[*p_position].IDcheval4);
-
 }

@@ -4,12 +4,10 @@
 #include "h.h"
 ////////////////////////////////////////////////////////////////////////////////
 /**
-  *\fn choix_depart désigne le joueur qui commence la partie. Elle prend en paramètre
-    le nombre maximum de joueurs présent dans la partie.
-  *\param max désigne le nombre maximum de joueurs présent dans la partie.
-  *\return choix_d le numéro du joueur choisi pour commencer la partie.
+  *\fn choix_depart désigne le joueur qui joue au prochain tour.
+  *\param
 */
-int choix_depart(int *max);
+int choix_depart(int *compteur_j, int *nb_joueur);
 ////////////////////////////////////////////////////////////////////////////////
 /**
   *\fn De est la fonction symbolisant le dé qui décide du nombre de case que le cheval va parcourir.
@@ -25,7 +23,7 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
   *\param *j afin d'enregistrer les données dans un nouveau joueur.
   *\param *nb_joueur afin de créer le nombre de joueur voulu 
 */
-void choix(Joueur *j, int *nb_joueur);
+int choix(Joueur *j, int *nb_joueur, int *recupChoix);
 ////////////////////////////////////////////////////////////////////////////////
 
 #endif

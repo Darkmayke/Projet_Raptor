@@ -31,6 +31,8 @@ void nouvelle_partie() {
 	  cases[i].IDcheval3 = 16;
 	  cases[i].IDcheval4 = 16;
   }
+  cases[6].couleur = 2;
+  cases[6].IDcheval1 = 4;
 
   for (int i = 0; i < 17; i++) {
 	  ecurie[i].position_c = 56;
@@ -50,10 +52,10 @@ void nouvelle_partie() {
 	  exception = 0;
 	  printf("C'est au tour du Joueur %d de joué !\n", recupChoix);
 
-	  recupDe = De(player, ecurie, &recupChoix, cases, &position, &recupchoixcheval, &IDcheval);
+	  exception = De(player, ecurie, &recupChoix, cases, &position, &recupchoixcheval, &IDcheval, &recupDe);
 
 	  for (int i = 0; i <= nb_joueur - 1; i++) {
-		  printf("Joueur %d: %s ID: %d\n %s\n Ecurie: %d\n\n", i + 1, player[i].nom, player[i].num, coul_e[player[i].couleur], player[i].cheval_e);
+		  printf("Joueur %d: %s ID: %d\n %s\n Ecurie: %d\n Cheval Dispo: %d | %d | %d | %d\n\n", i + 1, player[i].nom, player[i].num, coul_e[player[i].couleur], player[i].cheval_e, player[i].cheval_dispo[0], player[i].cheval_dispo[1], player[i].cheval_dispo[2], player[i].cheval_dispo[3]);
 	  }
 
 	  for (int j4 = 0; j4 < nb_joueur * 4; j4++) {
@@ -82,12 +84,17 @@ void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheva
   }
   ecurie[16].couleur = 4;
   ecurie[16].num = 17;
+  ecurie[4].position_c = 6;
+  player[1].cheval_e = 1;
+  player[1].cheval_dispo[0] = 1;
 }
 
 void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval) {
 	*recupchoixcheval = 0;
-	printf("Quel cheval voulez-vous faire avancez ? (Son Numéro): ");
-	scanf("%d", recupchoixcheval);
+	do {
+		printf("Quel cheval voulez-vous faire avancez ? (Son Numéro): ");
+		scanf("%d", recupchoixcheval);
+	} while ((*recupchoixcheval < 1) && (*recupchoixcheval > 4));
 
 	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixcheval)-1;
 }

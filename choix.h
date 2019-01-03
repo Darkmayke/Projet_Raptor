@@ -13,7 +13,7 @@ int choix_depart(int *compteur_j, int *nb_joueur);
   *\fn De est la fonction symbolisant le dé qui décide du nombre de case que le cheval va parcourir.
   *\return lancer le nombre de case que le cheval va parcourir.
 */
-int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *position, int *recupchoixcheval, int *IDcheval);
+int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *position, int *recupchoixcheval, int *IDcheval, int *recupDe);
 ////////////////////////////////////////////////////////////////////////////////
 /**
   *\fn choix est une des fonctions de gestions de partie. Elle demande à l'utilisateur

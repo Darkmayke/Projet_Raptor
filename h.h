@@ -27,7 +27,8 @@ typedef struct {
   Color couleur;
   char nom[20];
   int num;
-  char cheval_e;
+  int cheval_e;
+  int cheval_dispo[4];
 }Joueur;
 ////////////////////////////////////////////////////////////////////////////////
 /**

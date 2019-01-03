@@ -14,7 +14,7 @@ int choix(Joueur player[], int *nb_joueur, int *recupChoix)
 	{
 		printf("Nombre de Joueur pour la Partie : ");
 		scanf("%d", nb_joueur);
-	} while ((*nb_joueur < 1) || (*nb_joueur > 4));
+	} while ((*nb_joueur < 2) || (*nb_joueur > 4));
 	clean();
 	/* Sélection des Joueurs*/
 	Joueur *g;
@@ -30,6 +30,10 @@ int choix(Joueur player[], int *nb_joueur, int *recupChoix)
 		clean();
 		g->num = i + 1;
 		g->cheval_e = 0;
+		for (int i = 0; i < 4; i++) {
+			g->cheval_dispo[i] = 0;
+		}
+
 		do
 		{
 			printf("Quelle Couleur voulez-vous :\n");
@@ -77,18 +81,25 @@ int choix_depart(int *compteur_j, int *nb_joueur)
 	return *compteur_j;
 }
 
-int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *position, int *recupchoixcheval, int *IDcheval)
+int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *position, int *recupchoixcheval, int *IDcheval, int *recupDe)
 {
 	srand(time(NULL));
-	int lancer = rand() % (6 - 1 + 1) + 1;
-	lancer = 6;
-	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, lancer);
-	int a = 0;
-	int confirmation;
+	*recupDe = rand() % (6 - 1 + 1) + 1;
+	*recupDe = 6;
+	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);
 
-	if ((lancer == 6) && ((player[*recupChoix - 1].cheval_e < 4) || (player[*recupChoix - 1].cheval_e == 0))) {
+	int a = 0; // Permet de dire que la position reste inchangé
+	int confirmation; // Permet la vérification de la valeur donner par l'utilisateur
+	int exception = 0;
+	int fin = 0;
+	
+
+	if (*recupDe == 6) { // Si le Joueur fait un 6 alors il rejoue
+		// exception = 1;
+	}
+	if ((*recupDe == 6) && ((player[*recupChoix - 1].cheval_e < 4) || (player[*recupChoix - 1].cheval_e == 0))) {
 		do {
 			printf("Vous avez fait un 6, voulez vous sortir un Cheval de votre écurie ? (1 = Oui | 2= Non): ");
 			scanf("%d", &confirmation);
@@ -96,20 +107,42 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 		clean();
 		if (confirmation == 1) {
 			player[*recupChoix - 1].cheval_e++;
-			*recupchoixcheval = player[*recupChoix - 1].cheval_e;
-			ecurie[((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e) - 1].position_c = (player[*recupChoix - 1].couleur) * 14;
 
-			chemin(&a, cases, position, IDcheval, recupchoixcheval, ecurie);
+			/* A Tranformer en boucle while (J'y arrive pas, faudra m'explqier comment faire) */
+			if (player[*recupChoix - 1].cheval_dispo[0] == 0) {
+				*recupchoixcheval = 1;
+				player[*recupChoix - 1].cheval_dispo[0] = 1;
+				fin = 1;
+			}
+			if ((player[*recupChoix - 1].cheval_dispo[1] == 0) && (fin == 0)) {
+				*recupchoixcheval = 2;
+				player[*recupChoix - 1].cheval_dispo[1] = 1;
+				fin = 2;
+			}
+			if ((player[*recupChoix - 1].cheval_dispo[2] == 0) && (fin == 0)) {
+				*recupchoixcheval = 3;
+				player[*recupChoix - 1].cheval_dispo[2] = 1;
+				fin = 3;
+			}
+			if ((player[*recupChoix - 1].cheval_dispo[3] == 0) && (fin == 0)) {
+				*recupchoixcheval = 4;
+				player[*recupChoix - 1].cheval_dispo[3] = 1;
+				fin = 4;
+			}
+
+			ecurie[((*recupChoix - 1) * 4 + fin) - 1].position_c = (player[*recupChoix - 1].couleur) * 14;
+			chemin(&a, cases, position, IDcheval, recupchoixcheval, ecurie, player);
 		}
 	}
+
 	if ((player[*recupChoix - 1].cheval_e != 0) && (confirmation == 2)){
 		selection_cheval(recupChoix, recupchoixcheval, IDcheval);
 		*position = ecurie[*IDcheval].position_c;
-		chemin(&lancer, cases, position, IDcheval, recupchoixcheval, ecurie);
+		chemin(recupDe, cases, position, IDcheval, recupchoixcheval, ecurie, player);
 	}
 	else {
 		printf("Désolé Joueur %d vous n'avez pas fait un assez bon lancer pour sortir un cheval.\n", *recupChoix);
 	}
 
-	return lancer;
+	return exception;
 }

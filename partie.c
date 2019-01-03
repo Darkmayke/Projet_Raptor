@@ -31,8 +31,6 @@ void nouvelle_partie() {
 	  cases[i].IDcheval3 = 16;
 	  cases[i].IDcheval4 = 16;
   }
-  cases[6].couleur = 2;
-  cases[6].IDcheval1 = 4;
 
   for (int i = 0; i < 17; i++) {
 	  ecurie[i].position_c = 56;
@@ -84,9 +82,6 @@ void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheva
   }
   ecurie[16].couleur = 4;
   ecurie[16].num = 17;
-  ecurie[4].position_c = 6;
-  player[1].cheval_e = 1;
-  player[1].cheval_dispo[0] = 1;
 }
 
 void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval) {

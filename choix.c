@@ -4,6 +4,8 @@
 
 #include "esthetique.h"
 #include "couleurs.h"
+#include "plateau.h"
+#include "partie.h"
 #include "choix.h"
 #include "h.h"
 
@@ -85,15 +87,19 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 {
 	srand(time(NULL));
 	*recupDe = rand() % (6 - 1 + 1) + 1;
+	*recupDe = 6;
 	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);
+
+	//a utiliser pour remplacer tout les player[*recupChoix -1]
+	//Joueur *playerChoisit = *player[*recupChoix - 1];
 
 	int a = 0; // Permet de dire que la position reste inchangé
 	int confirmation; // Permet la vérification de la valeur donner par l'utilisateur
 	int exception = 0;
 	int fin = 0;
-	
+
 
 	if (*recupDe == 6) { // Si le Joueur fait un 6 alors il rejoue
 		// exception = 1;

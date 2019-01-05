@@ -12,7 +12,7 @@ void nouvelle_partie() {
   int compteur_j; // Compteur qui permet de savoir qui a déjà jouer et qui doit jouer ensuite
   int nb_joueur; // Nombre de Joueur dans la partie
   int position = 0; // Position du cheval séléctioner
-  int IDcheval; // ID d'un cheval par rapport a tout les chevaux du Jeu
+  int IDcheval; // ID d'un cheval par rapport a tous les chevaux du Jeu
   int exception; // Exception pour la fonction "choix_depart"
   int Fin = 0; // Sortir de boucle en cas de fin de partie
 
@@ -40,7 +40,7 @@ void nouvelle_partie() {
   creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
   printf("Le Joueur %d commence !\n", recupChoix);
   compteur_j = recupChoix;
-  
+
   while (Fin != 1) {
 	  efface_ecran();
 

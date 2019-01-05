@@ -27,6 +27,8 @@ char Grille[Taille_Grille_H][Taille_Grille] = {
 	{"[] [] [] [] [] [] [] [ [ ] ] [] [] [] [] [] [] []"}
 };
 
+Color CouleurChemin[Taille_Grille_H][Taille_Grille];
+
 int i, j;
 
 void affichePlateau() {
@@ -47,11 +49,14 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j == 21) && ((i >= 1) && (i <= 6))) || (((j >= 3) && (j <= 21)) && (i == 7)) || ((j == 24) && (i == 1)))
 	{
-		printf(COLOR_JAUNE_E, Grille[i][j]);
+		if(Grille[i][j] < '1' || Grille[i][j] > '4')
+			printf(COLOR_JAUNE_E, Grille[i][j]);
+		else
+			afficherCouleurCheval(i,j);
 	}
 	else if (((j >= 23) && (j <= 25)) && ((i >= 2) && (i <= 7)))
 	{
-		printf(COLOR_JAUNE_EF, Grille[i][j]);
+			printf(COLOR_JAUNE_EF, Grille[i][j]);
 	}
 
 	/* Vert */
@@ -61,11 +66,14 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j == 21) && ((i >= 9) && (i <= 15))) || (((j >= 3) && (j <= 21)) && (i == 9)) || ((j == 3) && (i == 8)))
 	{
-		printf(COLOR_VERT_E, Grille[i][j]);
+		if(Grille[i][j] < '1' || Grille[i][j] > '4')
+			printf(COLOR_VERT_E, Grille[i][j]);
+		else
+			afficherCouleurCheval(i,j);
 	}
 	else if (((j >= 5) && (j <= 22)) && (i == 8))
 	{
-		printf(COLOR_VERT_EF, Grille[i][j]);
+			printf(COLOR_VERT_EF, Grille[i][j]);
 	}
 
 
@@ -76,7 +84,10 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j == 27) && ((i >= 9) && (i <= 15))) || (((j >= 27) && (j <= 45)) && (i == 9)) || ((j == 24) && (i == 15)))
 	{
-		printf(COLOR_ROUGE_E, Grille[i][j]);
+		if(Grille[i][j] < '1' || Grille[i][j] > '4')
+			printf(COLOR_ROUGE_E, Grille[i][j]);
+		else
+			afficherCouleurCheval(i,j);
 	}
 	else if (((j >= 23) && (j <= 25)) && ((i >= 9) && (i <= 14)))
 	{
@@ -90,7 +101,10 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j == 27) && ((i >= 1) && (i <= 7))) || (((j >= 27) && (j <= 45)) && (i == 7)) || ((j == 45) && (i == 8)))
 	{
-		printf(COLOR_BLEU_E, Grille[i][j]);
+		if(Grille[i][j] < '1' || Grille[i][j] > '4')
+			printf(COLOR_BLEU_E, Grille[i][j]);
+		else
+			afficherCouleurCheval(i,j);
 	}
 	else if (((j >= 26) && (j <= 43)) && (i == 8))
 	{
@@ -106,6 +120,17 @@ void afficheCouleur(int i,int j) {
 	{
 		printf("%c", Grille[i][j]);
 	}
+}
+
+void afficherCouleurCheval(int i,int j) {
+	if (CouleurChemin[i][j] == VERT)
+			printf(COLOR_VERT_E, Grille[i][j]);
+	else if (CouleurChemin[i][j] == JAUNE)
+			printf(COLOR_JAUNE_E, Grille[i][j]);
+	else if (CouleurChemin[i][j] == BLEU)
+			printf(COLOR_BLEU_E, Grille[i][j]);
+	else
+			printf(COLOR_ROUGE_E, Grille[i][j]);
 }
 
 void recupereEmplacementGrille(int numCase, int *x, int *y) {
@@ -160,7 +185,7 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 }
 
 // actualisePlateau(le cheval et les coord)
-void actualisePlateau(int numCase,int IDcheval) {
+void actualisePlateau(int numCase,int IDcheval,Color couleur) {
 	printf("actualisation\n");
 	int x,y;
 	recupereEmplacementGrille(numCase,&x,&y);
@@ -188,7 +213,9 @@ void actualisePlateau(int numCase,int IDcheval) {
 			//afficher le cheval comme étant ROUGE
 			affichage = IDcheval-12+1;
 		}
-		Grille[y][x] = affichage+'0'; //transforme l'entier en caractère.
+		Grille[y][x] = affichage+'0'; //transforme l'entier en caractère et le stock dans la Grille
+		//stock la couleur du cheval
+		CouleurChemin[y][x] = couleur;
 	}
 }
 
@@ -298,5 +325,5 @@ void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, in
 		c->couleur = ecurie[*IDcheval].couleur;
 		c->IDcheval4 = *IDcheval;
 	}
-	actualisePlateau(*position,*IDcheval);
+	actualisePlateau(*position,*IDcheval,ecurie[*IDcheval].couleur);
 }

@@ -113,8 +113,8 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 		*x = 21;
 		*y = 15-numCase;
 
-	} else if (numCase </*=*/ 12) {
-		*x = 21-(numCase+6)*3;
+	} else if (numCase < 13) {
+		*x = 21-(numCase-6)*3;
 		*y = 9;
 
 	} else if (numCase == 13) {
@@ -127,10 +127,10 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 
 	}else if (numCase < 27) {
 		*x = 21;
-		*y = 7+numCase;
+		*y = 7-(numCase-20);
 
 	} else if (numCase == 27) {
-		*x = 25;
+		*x = 24;
 		*y = 1;
 
 	} else if (numCase < 35) {
@@ -138,7 +138,7 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 		*y = 1+(numCase-28);
 
 	} else if (numCase < 41) {
-		*x =27+(numCase-35)*3;
+		*x =27+(numCase-34)*3;
 		*y =7;
 
 	}else if (numCase == 41) {
@@ -149,9 +149,9 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 		*x = 45-(numCase-42)*3;
 		*y = 9;
 
-	}  else if (numCase < 56) {
+	}  else if (numCase < 55) {
 		*x = 27;
-		*y = 9+(numCase-50);
+		*y = 9+(numCase-48);
 
 	}else if (numCase == 55){
 		*x = 24;
@@ -168,6 +168,7 @@ void actualisePlateau(int numCase,int IDcheval) {
 	if(IDcheval == 16) {
 		//affiche la case comme vide
 		Grille[y][x] = 'O';
+		afficheCouleur(y,x);
 		//A COMPLETER EN GERANT LES 0 ET X
 		//RESET A SA COULEUR DORIGINE
 	} else {
@@ -204,7 +205,7 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 	for (int saut = 0; saut < *p_recupDe; saut++) {
 		(*p_position)++;
 
-		if (*p_position > 56) {
+		if (*p_position > 55) {
 			*p_position = 0;
 		}
 		if (cases[*p_position].couleur != ecurie[*IDcheval].couleur) { // Vérifie pour chaque case parcourue s'il y a un cheval d'une autre couleur

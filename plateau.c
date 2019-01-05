@@ -47,7 +47,7 @@ void afficheCouleur(int i,int j) {
 	{
 		printf(COLOR_JAUNE_F, Grille[i][j]);
 	}
-	else if (((j == 21) && ((i >= 1) && (i <= 6))) || (((j >= 3) && (j <= 21)) && (i == 7)) || ((j == 24) && (i == 1)))
+	else if (((j == 21) && ((i >= 1) && (i <= 6))) || (((j >= 3) && (j <= 21)) && (i == 7)) || ((j == 3) && (i == 8)) )
 	{
 		if(Grille[i][j] < '1' || Grille[i][j] > '4')
 			printf(COLOR_JAUNE_E, Grille[i][j]);
@@ -64,7 +64,7 @@ void afficheCouleur(int i,int j) {
 	{
 		printf(COLOR_VERT_F, Grille[i][j]);
 	}
-	else if (((j == 21) && ((i >= 9) && (i <= 15))) || (((j >= 3) && (j <= 21)) && (i == 9)) || ((j == 3) && (i == 8)))
+	else if (((j == 21) && ((i >= 9) && (i <= 15))) || (((j >= 3) && (j <= 21)) && (i == 9)) || ((j == 24) && (i == 15)))
 	{
 		if(Grille[i][j] < '1' || Grille[i][j] > '4')
 			printf(COLOR_VERT_E, Grille[i][j]);
@@ -82,7 +82,7 @@ void afficheCouleur(int i,int j) {
 	{
 		printf(COLOR_ROUGE_F, Grille[i][j]);
 	}
-	else if (((j == 27) && ((i >= 9) && (i <= 15))) || (((j >= 27) && (j <= 45)) && (i == 9)) || ((j == 24) && (i == 15)))
+	else if (((j == 27) && ((i >= 9) && (i <= 15))) || (((j >= 27) && (j <= 45)) && (i == 9)) || ((j == 45) && (i == 8)))
 	{
 		if(Grille[i][j] < '1' || Grille[i][j] > '4')
 			printf(COLOR_ROUGE_E, Grille[i][j]);
@@ -99,7 +99,7 @@ void afficheCouleur(int i,int j) {
 	{
 		printf(COLOR_BLEU_F, Grille[i][j]);
 	}
-	else if (((j == 27) && ((i >= 1) && (i <= 7))) || (((j >= 27) && (j <= 45)) && (i == 7)) || ((j == 45) && (i == 8)))
+	else if (((j == 27) && ((i >= 1) && (i <= 7))) || (((j >= 27) && (j <= 45)) && (i == 7)) || ((j == 24) && (i == 1)))
 	{
 		if(Grille[i][j] < '1' || Grille[i][j] > '4')
 			printf(COLOR_BLEU_E, Grille[i][j]);

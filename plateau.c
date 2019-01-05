@@ -149,7 +149,11 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 		*x = 45-(numCase-42)*3;
 		*y = 9;
 
+<<<<<<< HEAD
 	}  else if (numCase < 56) {
+=======
+	} else if (numCase < 56) {
+>>>>>>> e618420c5d052fd7a7063ab826b59bb9c37bd8cf
 		*x = 27;
 		*y = 9+(numCase-50);
 

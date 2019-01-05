@@ -20,11 +20,11 @@ void nouvelle_partie() {
   char coul_e[][10] = { "VERT", "JAUNE", "BLEU", "ROUGE", "BLANC" };
   Joueur player[4];
   Cheval ecurie[17];
-  Case cases[56];
+  Case cases[63];
 
   // Initialisation du Jeu
 
-  for (int i = 0; i < 56; i++) {
+  for (int i = 0; i < 63; i++) {
 	  cases[i].couleur = 4;
 	  cases[i].IDcheval1 = 16;
 	  cases[i].IDcheval2 = 16;
@@ -41,7 +41,30 @@ void nouvelle_partie() {
   printf("Le Joueur %d commence !\n", recupChoix);
   compteur_j = recupChoix;
 
+<<<<<<< HEAD
   while (Fin != 1) {
+=======
+  /* Test */
+  cases[13].couleur = 1;
+  player[1].cheval_e = 4;
+
+  cases[13].IDcheval1 = 4;
+  cases[60].IDcheval2 = 4;
+  cases[61].IDcheval2 = 4;
+  cases[62].IDcheval2 = 4;
+
+  player[1].cheval_dispo[0] = 1;
+  player[1].cheval_dispo[1] = 1;
+  player[1].cheval_dispo[2] = 1;
+  player[1].cheval_dispo[3] = 1;
+
+  ecurie[4].position_c = 13;
+  ecurie[5].position_c = 60;
+  ecurie[6].position_c = 61;
+  ecurie[7].position_c = 62;
+  
+  while (Fin != 2) {
+>>>>>>> e618420c5d052fd7a7063ab826b59bb9c37bd8cf
 	  efface_ecran();
 
 	  if (exception != 1) {
@@ -64,10 +87,41 @@ void nouvelle_partie() {
 	  printf("\n");
 	  printf("\n");
 	  affichePlateau();
-	  do {
-		  printf("\n\nVoulez vous passez au prochain tour ? (0 = Oui | 1 = Non): ");
-		  scanf("%d", &Fin);
-	  } while ((Fin < 0) || (Fin > 1));
+
+	  /* Condition de Fin de Partie */
+	  for (int i = 0; i < nb_joueur; i++) {
+		  if (player[i].couleur == 0) {
+			  if ((cases[59].IDcheval1 < 16) && (cases[60].IDcheval1 < 16) && (cases[61].IDcheval1 < 16) && (cases[62].IDcheval1 < 16)) {
+				  printf("\nLe Joueur %d : %s remporte la Partie !\n", player[i].num, player[i].nom);
+				  Fin = 2;
+			  }
+		  }
+		  if (player[i].couleur == 1) {
+			  if ((cases[59].IDcheval2 < 16) && (cases[60].IDcheval2 < 16) && (cases[61].IDcheval2 < 16) && (cases[62].IDcheval2 < 16)) {
+				  printf("\nLe Joueur %d : %s remporte la Partie !\n", player[i].num, player[i].nom);
+				  Fin = 2;
+			  }
+		  }
+		  if (player[i].couleur == 2) {
+			  if ((cases[59].IDcheval3 < 16) && (cases[60].IDcheval3 < 16) && (cases[61].IDcheval3 < 16) && (cases[62].IDcheval3 < 16)) {
+				  printf("\nLe Joueur %d : %s remporte la Partie !\n", player[i].num, player[i].nom);
+				  Fin = 2;
+			  }
+		  }
+		  if (player[i].couleur == 3) {
+			  if ((cases[59].IDcheval3 < 16) && (cases[60].IDcheval3 < 16) && (cases[61].IDcheval3 < 16) && (cases[62].IDcheval3 < 16)) {
+				  printf("\nLe Joueur %d : %s remporte la Partie !\n", player[i].num, player[i].nom);
+				  Fin = 2;
+			  }
+		  }
+	  }
+
+	  if (Fin != 2) {
+		  do {
+			  printf("\n\nVoulez vous passez au prochain tour ? (1 = Oui | 2 = Non): ");
+			  scanf("%d", &Fin);
+		  } while ((Fin < 1) || (Fin > 2));
+	  }
   }
 }
 
@@ -91,5 +145,5 @@ void selection_cheval(int *recupchoix, int *recupchoixcheval, int *IDcheval) {
 		scanf("%d", recupchoixcheval);
 	} while ((*recupchoixcheval < 1) && (*recupchoixcheval > 4));
 
-	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixcheval)-1;
+	*IDcheval = ((*recupchoix - 1) * 4 + *recupchoixcheval)- 1;
 }

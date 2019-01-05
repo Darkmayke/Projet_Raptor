@@ -224,68 +224,62 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
   // Mettre à 55 pour la vérification du passage de tour.
   int barrage = 0; // Valeur permettant de savoir s'il y a un cheval en barrage
   int conflit = 0; // Valeur permettant de savoir s'il y a conflit entre 2 chevaux de couleur différentes sur une case
+	int echelle = 0; // Valeur permttant de savoir si le Joueur entre dans la phase finale du Jeu (Echelle de fin)
   int pos_depart = *p_position; // Enregistre la position de départ du cheval
   int r_ID = 16; // Permet de remettre à la valeur initiale l'ID d'un cheval dans la structure case
 
- /* Fait avancer la position du cheval en fonction de la valeur du dé */
-	printf("\nCase : %d -->", *p_position);
-	for (int saut = 0; saut < *p_recupDe; saut++) {
-		(*p_position)++;
-
-		if (*p_position > 55) {
-			*p_position = 0;
-		}
-		if (cases[*p_position].couleur != ecurie[*IDcheval].couleur) { // Vérifie pour chaque case parcourue s'il y a un cheval d'une autre couleur
-			barrage = 1; // Signifie que il y a bien un cheval en barrage
-		}
-    }
-	printf(" %d\n", *p_position);
-
-/* Vérification que la case d'arrivée ne contient pas un cheval d'une autre couleur */
-	if (cases[*p_position].couleur != ecurie[*IDcheval].couleur) {
-		conflit = 1; // Signifie qu'il y a conflit entre 2 chevaux de couleur différentes
-		barrage = 0;
-		for (int i = 0; i < 4; i++) {
-			if (cases[*p_position].couleur == player[i].couleur) {
-				printf("Joueur %d : Chevaux Ecurie = %d\n", i + 1, player[i].cheval_e);
-				player[i].cheval_e = player[i].cheval_e - 1;
-				if (*recupchoixcheval == 1) {
-					ecurie[cases[*p_position].IDcheval1].position_c = 56;
-					player[i].cheval_dispo[0] = 0;
-				}
-				else if (*recupchoixcheval == 2) {
-					ecurie[cases[*p_position].IDcheval2].position_c = 56;
-					player[i].cheval_dispo[1] = 0;
-				}
-				else if (*recupchoixcheval == 3) {
-					ecurie[cases[*p_position].IDcheval3].position_c = 56;
-					player[i].cheval_dispo[2] = 0;
-				}
-				else if (*recupchoixcheval == 4) {
-					ecurie[cases[*p_position].IDcheval4].position_c = 56;
-					player[i].cheval_dispo[3] = 0;
-				}
-			}
-		}
-		deplacement(p_position, cases, ecurie, &r_ID, recupchoixcheval);
+	/* Entrée dans l'Echelle de fin*/
+	if (((ecurie[*IDcheval].position_c) == (((ecurie[*IDcheval].couleur) * 14) - 1)) || ((ecurie[*IDcheval].couleur == 0) && (ecurie[*IDcheval].position_c == 55)) || (ecurie[*IDcheval].position_c > 56)) {
+		echelle = marche(cases, ecurie, IDcheval, p_recupDe, recupchoixcheval, r_ID);
 	}
 
-/* Suppression du cheval de sa case de départ */
-	if (barrage == 0) {
-		deplacement(&pos_depart, cases, ecurie, &r_ID, recupchoixcheval);
-	}
+	/* Fait avancer la position du cheval en fonction de la valeur du dé */
+   if (echelle == 0) {
+ 	  printf("\nCase : %d -->", *p_position);
+ 	  for (int saut = 0; saut < *p_recupDe; saut++) {
+ 		  (*p_position)++;
 
-/* Enregistre le cheval dans la case d'arrivée */
-	if (barrage == 0) {
-		ecurie[*IDcheval].position_c = *p_position;
-		deplacement(p_position, cases, ecurie, IDcheval, recupchoixcheval);
-	}
-	if (barrage == 1) {
-		printf("Il y avait un cheval sur votre route ! Dommage retour à l'envoyeur.\nVotre Cheval reste sur place et vous passez votre tour.\n");
-	}
-	if (conflit == 1) {
-		printf("Vous avez chargé le cheval adverse et vous l'avez renvoyé dans son écurie !\n");
-	}
+ 		  if (*p_position > 55) {
+ 			  *p_position = 0;
+ 		  }
+ 		  if ((cases[*p_position].couleur != ecurie[*IDcheval].couleur) && (cases[*p_position].couleur != 4)) { // Vérifie pour chaque case parcouru si il y a un cheval d'un autre couleur
+ 			  barrage = 1; // Signifie que il y a bien un cheval en barrage
+ 		  }
+ 		  // Vérification que le Cheval a bien fait un tour et qu'il doit s'arreter sur la case devant l'échelle de fin
+ 		  if ((*p_position >= (((ecurie[*IDcheval].couleur) * 14) - 1)) && (pos_depart <= (((ecurie[*IDcheval].couleur) * 14) - 1)) || ((pos_depart > *p_position) && (ecurie[*IDcheval].couleur == 0))) {
+ 			  barrage = 1;
+ 			  echelle = 1;
+ 		  }
+ 	  }
+ 	  printf(" %d\n", *p_position);
+   }
+
+	 /* Vérification que la case d'arrivée ne contient pas un cheval d'un autre couleur */
+	 	if ((cases[*p_position].couleur != ecurie[*IDcheval].couleur) && (cases[*p_position].couleur != 4)) {
+	 		conflit = 1; // Signifie qu'il y a conflit entre 2 chevaux de couleur différentes
+	 		barrage = 0;
+	 		verif_conflit(cases, ecurie, player, p_position, recupchoixcheval, r_ID);
+	 	}
+
+	 /* Suppression du cheval de sa case de départ */
+	 	if (barrage == 0) {
+	 		deplacement(&pos_depart, cases, ecurie, &r_ID, recupchoixcheval);
+	 	}
+
+	 /* Enregistre le cheval dans la case d'arrivée */
+	 	if ((barrage == 0) && (echelle == 0)) {
+	 		ecurie[*IDcheval].position_c = *p_position;
+	 		deplacement(p_position, cases, ecurie, IDcheval, recupchoixcheval);
+	 	}
+	 	if (barrage == 1 && echelle == 0) {
+	 		printf("Il y avait un cheval sur votre route ! Dommage retour à l'envoyeur.\nVotre Cheval reste sur place et vous passez votre tour.\n");
+	 	}
+	 	if (barrage == 1 && echelle == 1) {
+	 		printf("Vous êtes aller trop loin ! Vous retournez a votre position de départ et vous passez votre tour. Essayer de na pas aller aussi loin la prochaine fois !\n");
+	 	}
+	 	if (conflit == 1) {
+	 		printf("Vous avez chargé le cheval adverse et vous l'avez renvoyé dans son écurie !\n");
+	 	}
 
 /* Affichage des cases de départ et d'arrivée */
 
@@ -326,4 +320,120 @@ void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, in
 		c->IDcheval4 = *IDcheval;
 	}
 	actualisePlateau(*position,*IDcheval,ecurie[*IDcheval].couleur);
+}
+
+
+void verif_conflit(Case cases[], Cheval ecurie[], Joueur player[], int *p_position, int *recupchoixcheval, int r_ID) {
+	for (int i = 0; i < 4; i++) {
+		if (cases[*p_position].couleur == player[i].couleur) {
+			printf("Joueur %d : Chevaux Ecurie = %d\n", i + 1, player[i].cheval_e);
+			player[i].cheval_e = player[i].cheval_e - 1;
+			if (*recupchoixcheval == 1) {
+				ecurie[cases[*p_position].IDcheval1].position_c = 56;
+				player[i].cheval_dispo[0] = 0;
+			}
+			else if (*recupchoixcheval == 2) {
+				ecurie[cases[*p_position].IDcheval2].position_c = 56;
+				player[i].cheval_dispo[1] = 0;
+			}
+			else if (*recupchoixcheval == 3) {
+				ecurie[cases[*p_position].IDcheval3].position_c = 56;
+				player[i].cheval_dispo[2] = 0;
+			}
+			else if (*recupchoixcheval == 4) {
+				ecurie[cases[*p_position].IDcheval4].position_c = 56;
+				player[i].cheval_dispo[3] = 0;
+			}
+		}
+	}
+	deplacement(p_position, cases, ecurie, &r_ID, recupchoixcheval);
+}
+
+void echelle_fin(Case cases[], Cheval ecurie[], int *IDcheval, int pos_echelle, int recupcouleur) {
+	Case *ca;
+
+	ca = cases + pos_echelle;
+	if (recupcouleur == 0) {
+		ca->IDcheval1 = *IDcheval;
+	}
+	if (recupcouleur == 1) {
+		ca->IDcheval2 = *IDcheval;
+	}
+	if (recupcouleur == 2) {
+		ca->IDcheval3 = *IDcheval;
+	}
+	if (recupcouleur == 3) {
+		ca->IDcheval4 = *IDcheval;
+	}
+
+	ecurie[*IDcheval].position_c = pos_echelle;
+	printf("Case Numero : %d\n", pos_echelle);
+	printf("Case Cheval1 : %d\n", cases[pos_echelle].IDcheval1);
+	printf("Case Cheval2 : %d\n", cases[pos_echelle].IDcheval2);
+	printf("Case Cheval3 : %d\n", cases[pos_echelle].IDcheval3);
+	printf("Case Cheval4 : %d\n\n\n", cases[pos_echelle].IDcheval4);
+}
+
+int marche(Case cases[], Cheval ecurie[], int *IDcheval, int *p_recupDe, int *recupchoixcheval, int r_ID) {
+	int recupcouleur = ecurie[*IDcheval].couleur; // Récupère la Couleur du cheval
+	int pos_cheval = ecurie[*IDcheval].position_c; // Récupère la Position du cheval
+
+	if (ecurie[*IDcheval].position_c == (((ecurie[*IDcheval].couleur) * 14) - 1)) {
+		if (*p_recupDe == 1) {
+			deplacement(&pos_cheval, cases, ecurie, &r_ID, recupchoixcheval);
+			echelle_fin(cases, ecurie, IDcheval, 57, recupcouleur);
+
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	else if (ecurie[*IDcheval].position_c == 57) {
+		if (*p_recupDe == 2) {
+			echelle_fin(cases, ecurie, &r_ID, 57, recupcouleur);
+			echelle_fin(cases, ecurie, IDcheval, 58, recupcouleur);
+
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	else if (ecurie[*IDcheval].position_c == 58) {
+		if (*p_recupDe == 3) {
+			echelle_fin(cases, ecurie, &r_ID, 58, recupcouleur);
+			echelle_fin(cases, ecurie, IDcheval, 59, recupcouleur);
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	else if (ecurie[*IDcheval].position_c == 59) {
+		if (*p_recupDe == 4) {
+			echelle_fin(cases, ecurie, &r_ID, 59, recupcouleur);
+			echelle_fin(cases, ecurie, IDcheval, 60, recupcouleur);
+
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	else if (ecurie[*IDcheval].position_c == 60) {
+		if (*p_recupDe == 5) {
+			echelle_fin(cases, ecurie, &r_ID, 60, recupcouleur);
+			echelle_fin(cases, ecurie, IDcheval, 61, recupcouleur);
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	else if (ecurie[*IDcheval].position_c == 61) {
+		if (*p_recupDe == 6) {
+			echelle_fin(cases, ecurie, &r_ID, 61, recupcouleur);
+			echelle_fin(cases, ecurie, IDcheval, 62, recupcouleur);
+		}
+		else {
+			printf("\nDésolé mais tu n'a pas fait assez pour pouvoir monter la marche !\n\n");
+		}
+	}
+	return 1;
 }

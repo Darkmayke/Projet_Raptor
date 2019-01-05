@@ -87,11 +87,11 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 {
 	srand(time(NULL));
 	*recupDe = rand() % (6 - 1 + 1) + 1;
-<<<<<<< HEAD
+
 	*recupDe = 6;
-=======
+
 	*recupDe = 1;
->>>>>>> e618420c5d052fd7a7063ab826b59bb9c37bd8cf
+
 	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);

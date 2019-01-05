@@ -41,9 +41,8 @@ void nouvelle_partie() {
   printf("Le Joueur %d commence !\n", recupChoix);
   compteur_j = recupChoix;
 
-<<<<<<< HEAD
+
   while (Fin != 1) {
-=======
   /* Test */
   cases[13].couleur = 1;
   player[1].cheval_e = 4;
@@ -62,9 +61,9 @@ void nouvelle_partie() {
   ecurie[5].position_c = 60;
   ecurie[6].position_c = 61;
   ecurie[7].position_c = 62;
-  
+
   while (Fin != 2) {
->>>>>>> e618420c5d052fd7a7063ab826b59bb9c37bd8cf
+
 	  efface_ecran();
 
 	  if (exception != 1) {
@@ -123,6 +122,7 @@ void nouvelle_partie() {
 		  } while ((Fin < 1) || (Fin > 2));
 	  }
   }
+}
 }
 
 void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval) {

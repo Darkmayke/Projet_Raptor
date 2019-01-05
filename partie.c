@@ -44,10 +44,11 @@ void nouvelle_partie() {
 
   //while (Fin != 1) {
   /* Test */
-  /*cases[13].couleur = 1;
+  /* 
+  cases[57].couleur = 4;
   player[1].cheval_e = 4;
 
-  cases[13].IDcheval1 = 4;
+  cases[57].IDcheval1 = 4;
   cases[60].IDcheval2 = 4;
   cases[61].IDcheval2 = 4;
   cases[62].IDcheval2 = 4;
@@ -57,11 +58,12 @@ void nouvelle_partie() {
   player[1].cheval_dispo[2] = 1;
   player[1].cheval_dispo[3] = 1;
 
-  ecurie[4].position_c = 13;
+  ecurie[4].position_c = 57;
   ecurie[5].position_c = 60;
   ecurie[6].position_c = 61;
   ecurie[7].position_c = 62;
-*/
+  */
+
   while (Fin != 2) {
 
 	  efface_ecran();

@@ -85,12 +85,13 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 {
 	srand(time(NULL));
 	*recupDe = rand() % (6 - 1 + 1) + 1;
+	*recupDe = 1;
 	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);
 
 	int a = 0; // Permet de dire que la position reste inchangé
-	int confirmation; // Permet la vérification de la valeur donner par l'utilisateur
+	int confirmation = 2; // Permet la vérification de la valeur donner par l'utilisateur
 	int exception = 0;
 	int fin = 0;
 	
@@ -139,7 +140,7 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 		*position = ecurie[*IDcheval].position_c;
 		chemin(recupDe, cases, position, IDcheval, recupchoixcheval, ecurie, player);
 	}
-	else {
+	else if (*recupDe != 6){
 		printf("Désolé Joueur %d vous n'avez pas fait un assez bon lancer pour sortir un cheval.\n", *recupChoix);
 	}
 

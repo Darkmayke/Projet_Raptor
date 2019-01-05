@@ -87,7 +87,6 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 {
 	srand(time(NULL));
 	*recupDe = rand() % (6 - 1 + 1) + 1;
-	//*recupDe = 2;
 	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);
@@ -102,7 +101,7 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 
 
 	if (*recupDe == 6) { // Si le Joueur fait un 6 alors il rejoue
-		// exception = 1;
+		exception = 1;
 	}
 	if ((*recupDe == 6) && ((player[*recupChoix - 1].cheval_e < 4) || (player[*recupChoix - 1].cheval_e == 0))) {
 		do {
@@ -113,7 +112,6 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 		if (confirmation == 1) {
 			player[*recupChoix - 1].cheval_e++;
 
-			/* A Tranformer en boucle while (J'y arrive pas, faudra m'explqier comment faire) */
 			if (player[*recupChoix - 1].cheval_dispo[0] == 0) {
 				*recupchoixcheval = 1;
 				player[*recupChoix - 1].cheval_dispo[0] = 1;

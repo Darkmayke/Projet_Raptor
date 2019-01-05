@@ -38,31 +38,8 @@ void nouvelle_partie() {
 
   exception = choix(player, &nb_joueur, &recupChoix);
   creer_cheval(ecurie, player, &nb_joueur, &IDcheval);
-  printf("Le Joueur %d commence !\n", recupChoix);
+  printf("\nLe Joueur %d commence !\n", recupChoix);
   compteur_j = recupChoix;
-
-
-  //while (Fin != 1) {
-  /* Test */
-  /* 
-  cases[57].couleur = 4;
-  player[1].cheval_e = 4;
-
-  cases[57].IDcheval1 = 4;
-  cases[60].IDcheval2 = 4;
-  cases[61].IDcheval2 = 4;
-  cases[62].IDcheval2 = 4;
-
-  player[1].cheval_dispo[0] = 1;
-  player[1].cheval_dispo[1] = 1;
-  player[1].cheval_dispo[2] = 1;
-  player[1].cheval_dispo[3] = 1;
-
-  ecurie[4].position_c = 57;
-  ecurie[5].position_c = 60;
-  ecurie[6].position_c = 61;
-  ecurie[7].position_c = 62;
-  */
 
   while (Fin != 2) {
 
@@ -70,19 +47,11 @@ void nouvelle_partie() {
 
 	  if (exception != 1) {
 		  recupChoix = choix_depart(&compteur_j, &nb_joueur);
+		  printf("\nC'est au tour du Joueur %d de joué !\n", recupChoix);
 	  }
 	  exception = 0;
-	  printf("C'est au tour du Joueur %d de joué !\n", recupChoix);
 
 	  exception = De(player, ecurie, &recupChoix, cases, &position, &recupchoixcheval, &IDcheval, &recupDe);
-
-	  for (int i = 0; i <= nb_joueur - 1; i++) {
-		  printf("Joueur %d: %s ID: %d\n %s\n Ecurie: %d\n Cheval Dispo: %d | %d | %d | %d\n\n", i + 1, player[i].nom, player[i].num, coul_e[player[i].couleur], player[i].cheval_e, player[i].cheval_dispo[0], player[i].cheval_dispo[1], player[i].cheval_dispo[2], player[i].cheval_dispo[3]);
-	  }
-
-	  for (int j4 = 0; j4 < nb_joueur * 4; j4++) {
-		  printf("Cheval n°: %d | de couleur : %s | en position : %d\n", ecurie[j4].num, coul_e[ecurie[j4].couleur], ecurie[j4].position_c);
-	  }
 
 	  printf("\n");
 	  printf("\n");
@@ -125,7 +94,6 @@ void nouvelle_partie() {
 	  }
   }
 }
-//}
 
 void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval) {
   *IDcheval = 0; // ID des chevaux  (cheval n°12)

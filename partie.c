@@ -54,8 +54,7 @@ void nouvelle_partie() {
 	  exception = De(player, ecurie, &recupChoix, cases, &position, &recupchoixcheval, &IDcheval, &recupDe);
 
 	  printf("\n");
-	  printf("\n");
-	  printf("\n");
+
 	  affichePlateau();
 
 	  /* Condition de Fin de Partie */

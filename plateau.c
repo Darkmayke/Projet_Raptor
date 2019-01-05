@@ -205,7 +205,7 @@ void afficheCouleur(int i,int j) {
 		else {
 			printf(COLOR_VERT_EF, Grille[i][j]);
 		}
-		
+
 	}
 
 	/* Bleu */
@@ -356,11 +356,8 @@ void recupereEmplacementGrille(int numCase, int *x, int *y, Color couleur) {
 }
 
 void actualisePlateau(int numCase,int IDcheval,Color couleur) {
-	printf("actualisation\n");
 	int x,y;
-	printf("\nnumCase : %d\n", couleur);
 	recupereEmplacementGrille(numCase,&x,&y,couleur);
-	printf("\nx : %d | y : %d\n", x, y);
 
 	if(IDcheval == 16) {
 		//affiche la case comme vide
@@ -431,7 +428,6 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 
 	/* Fait avancer la position du cheval en fonction de la valeur du dé */
    if (echelle == 0) {
- 	  printf("\nCase : %d -->", *p_position);
  	  for (int saut = 0; saut < *p_recupDe; saut++) {
  		  (*p_position)++;
 
@@ -447,7 +443,6 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
  			  echelle = 1;
  		  }
  	  }
- 	  printf(" %d\n", *p_position);
    }
 
 	 /* Vérification que la case d'arrivée ne contient pas un cheval d'une autre couleur */
@@ -481,7 +476,6 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, int *recupchoixcheval) {
 	Case *c;
 	c = cases + *position;
-	printf("id du cheval selectionne :      %d  de position %d\n", *IDcheval, *position);
 	if (*recupchoixcheval == 1) {
 		c->couleur = ecurie[*IDcheval].couleur;
 		c->IDcheval1 = *IDcheval;
@@ -505,7 +499,6 @@ void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, in
 void verif_conflit(Case cases[], Cheval ecurie[], Joueur player[], int *p_position, int *recupchoixcheval, int r_ID) {
 	for (int i = 0; i < 4; i++) {
 		if (cases[*p_position].couleur == player[i].couleur) {
-			printf("Joueur %d : Chevaux Ecurie = %d\n", i + 1, player[i].cheval_e);
 			player[i].cheval_e = player[i].cheval_e - 1;
 			if (*recupchoixcheval == 1) {
 				ecurie[cases[*p_position].IDcheval1].position_c = 56;

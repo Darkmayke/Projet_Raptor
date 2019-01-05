@@ -91,9 +91,6 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);
 
-	//a utiliser pour remplacer tout les player[*recupChoix -1]
-	//Joueur *playerChoisit = *player[*recupChoix - 1];
-
 	int a = 0; // Permet de dire que la position reste inchangé
 	int confirmation = 2; // Permet la vérification de la valeur donner par l'utilisateur
 	int exception = 0;

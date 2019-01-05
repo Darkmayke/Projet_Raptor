@@ -184,7 +184,6 @@ void recupereEmplacementGrille(int numCase, int *x, int *y) {
 	}
 }
 
-// actualisePlateau(le cheval et les coord)
 void actualisePlateau(int numCase,int IDcheval,Color couleur) {
 	printf("actualisation\n");
 	int x,y;
@@ -201,7 +200,6 @@ void actualisePlateau(int numCase,int IDcheval,Color couleur) {
 		int affichage;
 		if(IDcheval < 4) {
 			//afficher le cheval comme étant VERT
-			//A FAIRE POUR CHAQUE
 			affichage = IDcheval+1;
 		} else if (IDcheval < 8) {
 			//afficher le cheval comme étant JAUNE
@@ -254,7 +252,7 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
  	  printf(" %d\n", *p_position);
    }
 
-	 /* Vérification que la case d'arrivée ne contient pas un cheval d'un autre couleur */
+	 /* Vérification que la case d'arrivée ne contient pas un cheval d'une autre couleur */
 	 	if ((cases[*p_position].couleur != ecurie[*IDcheval].couleur) && (cases[*p_position].couleur != 4)) {
 	 		conflit = 1; // Signifie qu'il y a conflit entre 2 chevaux de couleur différentes
 	 		barrage = 0;

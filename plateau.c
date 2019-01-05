@@ -275,7 +275,7 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 	 		printf("Il y avait un cheval sur votre route ! Dommage retour à l'envoyeur.\nVotre Cheval reste sur place et vous passez votre tour.\n");
 	 	}
 	 	if (barrage == 1 && echelle == 1) {
-	 		printf("Vous êtes aller trop loin ! Vous retournez a votre position de départ et vous passez votre tour. Essayer de na pas aller aussi loin la prochaine fois !\n");
+	 		printf("Vous êtes aller trop loin ! Vous retournez à votre position de départ et vous passez votre tour. Essayer de ne pas aller aussi loin la prochaine fois !\n");
 	 	}
 	 	if (conflit == 1) {
 	 		printf("Vous avez chargé le cheval adverse et vous l'avez renvoyé dans son écurie !\n");

@@ -42,9 +42,9 @@ void nouvelle_partie() {
   compteur_j = recupChoix;
 
 
-  while (Fin != 1) {
+  //while (Fin != 1) {
   /* Test */
-  cases[13].couleur = 1;
+  /*cases[13].couleur = 1;
   player[1].cheval_e = 4;
 
   cases[13].IDcheval1 = 4;
@@ -61,7 +61,7 @@ void nouvelle_partie() {
   ecurie[5].position_c = 60;
   ecurie[6].position_c = 61;
   ecurie[7].position_c = 62;
-
+*/
   while (Fin != 2) {
 
 	  efface_ecran();
@@ -123,7 +123,7 @@ void nouvelle_partie() {
 	  }
   }
 }
-}
+//}
 
 void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval) {
   *IDcheval = 0; // ID des chevaux  (cheval n°12)

@@ -58,6 +58,4 @@ typedef struct {
 	 int IDcheval3;
 	 int IDcheval4;
  }Case;
-
-
 #endif

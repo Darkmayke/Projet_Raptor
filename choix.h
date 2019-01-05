@@ -19,11 +19,10 @@ int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *pos
   *\fn choix est une des fonctions de gestions de partie. Elle demande à l'utilisateur
     le nombre de joueurs, leur nom, et la couleur qu'ils désirent.
   *\param *p_recupDe récupère la valeur retournée par la fonction De.
-  *\param *p_recupDe récupère la valeur retournée par la fonction choix_depart.
   *\param *j afin d'enregistrer les données dans un nouveau joueur.
   *\param *nb_joueur afin de créer le nombre de joueur voulu 
 */
-int choix(Joueur *j, int *nb_joueur, int *recupChoix);
+int choix(Joueur player[], int *nb_joueur, int *recupChoix);
 ////////////////////////////////////////////////////////////////////////////////
 
 #endif

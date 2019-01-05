@@ -32,7 +32,6 @@ Color CouleurChemin[Taille_Grille_H][Taille_Grille];
 int i, j;
 
 void affichePlateau() {
-				//Grille[15][24] = '8';
 	for (i = 0; i < Taille_Grille_H; i++) {
 		for (j = 0; j < Taille_Grille; j++) {
 			afficheCouleur(i,j);

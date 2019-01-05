@@ -96,7 +96,7 @@ void nouvelle_partie() {
 }
 
 void creer_cheval(Cheval ecurie[], Joueur player[], int *nb_joueur, int *IDcheval) {
-  *IDcheval = 0; // ID des chevaux  (cheval n°12)
+  *IDcheval = 0;
   for (int i = 0; i < *nb_joueur; i++) {
     for (int j = 0; j < 4; j++) {
       ecurie[*IDcheval].couleur = player[i].couleur;

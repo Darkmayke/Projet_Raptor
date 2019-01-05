@@ -56,7 +56,7 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j >= 23) && (j <= 25)) && ((i >= 2) && (i <= 7)))
 	{
-			printf(COLOR_JAUNE_EF, Grille[i][j]);
+			printf(COLOR_BLEU_EF, Grille[i][j]);
 	}
 
 	/* Vert */
@@ -73,7 +73,7 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j >= 5) && (j <= 22)) && (i == 8))
 	{
-			printf(COLOR_VERT_EF, Grille[i][j]);
+			printf(COLOR_JAUNE_EF, Grille[i][j]);
 	}
 
 
@@ -91,7 +91,7 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j >= 23) && (j <= 25)) && ((i >= 9) && (i <= 14)))
 	{
-		printf(COLOR_ROUGE_EF, Grille[i][j]);
+		printf(COLOR_VERT_EF, Grille[i][j]);
 	}
 
 	/* Bleu */
@@ -108,7 +108,7 @@ void afficheCouleur(int i,int j) {
 	}
 	else if (((j >= 26) && (j <= 43)) && (i == 8))
 	{
-		printf(COLOR_BLEU_EF, Grille[i][j]);
+		printf(COLOR_ROUGE_EF, Grille[i][j]);
 	}
 	/* Blanc Bord*/
 	else if ((((j >= 0) && (j <= 48)) && (i == 0)) || (((j >= 0) && (j <= 48)) && (i == 16)) || (((j >= 47) && (j <= 48)) && ((i >= 0) && (i <= 16))) || (((j >= 0) && (j <= 1)) && ((i >= 0) && (i <= 16))))

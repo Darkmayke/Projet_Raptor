@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <unistd.h>
+//#include <unistd.h>
 #include "esthetique.h"
 #include "partie.h"
 
@@ -27,7 +27,7 @@ int main(void){
 
         switch (choix) {
             case 1 : nouvelle_partie();
-            sleep(999);
+            //sleep(999);
                      break;
 
             case 2 : regles();

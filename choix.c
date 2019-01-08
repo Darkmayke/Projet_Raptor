@@ -86,7 +86,9 @@ int choix_depart(int *compteur_j, int *nb_joueur)
 int De(Joueur player[], Cheval ecurie[], int *recupChoix, Case cases[], int *position, int *recupchoixcheval, int *IDcheval, int *recupDe)
 {
 	srand(time(NULL));
-	*recupDe = rand() % (6 - 1 + 1) + 1;
+	//*recupDe = rand() % (6 - 1 + 1) + 1;
+	printf("Valeur du Dé: ");
+	scanf("%d", recupDe);
 	printf("Le Joueur %d a lancer et a obtenu un %d !\n", *recupChoix, *recupDe);
 	*position = (player[*recupChoix - 1].couleur) * 14;
 	*IDcheval = ((*recupChoix - 1) * 4 + player[*recupChoix - 1].cheval_e);

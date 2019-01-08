@@ -428,6 +428,7 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 
 	/* Fait avancer la position du cheval en fonction de la valeur du dé */
    if (echelle == 0) {
+	  printf("\nCase : %d -->", *p_position);
  	  for (int saut = 0; saut < *p_recupDe; saut++) {
  		  (*p_position)++;
 
@@ -438,11 +439,12 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
  			  barrage = 1; // Signifie que il y a bien un cheval en barrage
  		  }
  		  // Vérification que le Cheval a bien fait un tour et qu'il doit s'arreter sur la case devant l'échelle de fin
- 		  if ((*p_position >= (((ecurie[*IDcheval].couleur) * 14) - 1)) && (pos_depart <= (((ecurie[*IDcheval].couleur) * 14) - 1)) || ((pos_depart > *p_position) && (ecurie[*IDcheval].couleur == 0))) {
+ 		  if ((*p_position > (((ecurie[*IDcheval].couleur) * 14) - 1)) && (pos_depart <= (((ecurie[*IDcheval].couleur) * 14) - 1)) || ((pos_depart > *p_position) && (ecurie[*IDcheval].couleur == 0))) {
  			  barrage = 1;
  			  echelle = 1;
  		  }
  	  }
+	  printf(" %d\n", *p_position);
    }
 
 	 /* Vérification que la case d'arrivée ne contient pas un cheval d'une autre couleur */
@@ -471,6 +473,22 @@ void chemin(int *p_recupDe, Case cases[], int *p_position, int *IDcheval, int *r
 	 	if (conflit == 1) {
 	 		printf("Vous avez chargé le cheval adverse et vous l'avez renvoyé dans son écurie !\n");
 	 	}
+
+	/* Affichage des cases de départ et d'arrivée */
+
+		printf("Case Numero : %d\n", pos_depart);
+		printf("Case Couleur : %s\n", coul_e[cases[pos_depart].couleur]);
+		printf("Case Cheval1 : %d\n", cases[pos_depart].IDcheval1);
+		printf("Case Cheval2 : %d\n", cases[pos_depart].IDcheval2);
+		printf("Case Cheval3 : %d\n", cases[pos_depart].IDcheval3);
+		printf("Case Cheval4 : %d\n\n\n", cases[pos_depart].IDcheval4);
+
+		printf("Case Numero : %d\n", *p_position);
+		printf("Case Couleur : %s\n", coul_e[cases[*p_position].couleur]);
+		printf("Case Cheval1 : %d\n", cases[*p_position].IDcheval1);
+		printf("Case Cheval2 : %d\n", cases[*p_position].IDcheval2);
+		printf("Case Cheval3 : %d\n", cases[*p_position].IDcheval3);
+		printf("Case Cheval4 : %d\n\n\n", cases[*p_position].IDcheval4);
 }
 
 void deplacement(int *position, Case cases[], Cheval ecurie[], int *IDcheval, int *recupchoixcheval) {
@@ -546,7 +564,7 @@ int marche(Case cases[], Cheval ecurie[], int *IDcheval, int *p_recupDe, int *re
 	int recupcouleur = ecurie[*IDcheval].couleur; // Récupère la Couleur du cheval
 	int pos_cheval = ecurie[*IDcheval].position_c; // Récupère la Position du cheval
 
-	if (ecurie[*IDcheval].position_c == (((ecurie[*IDcheval].couleur) * 14) - 1)) {
+	if (((ecurie[*IDcheval].position_c) == (((ecurie[*IDcheval].couleur) * 14) - 1)) || ((ecurie[*IDcheval].couleur == 0) && (ecurie[*IDcheval].position_c == 55))) {
 		if (*p_recupDe == 1) {
 			deplacement(&pos_cheval, cases, ecurie, &r_ID, recupchoixcheval);
 			echelle_fin(cases, ecurie, IDcheval, 57, recupcouleur);
